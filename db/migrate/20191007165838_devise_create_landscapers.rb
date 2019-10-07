@@ -3,6 +3,13 @@
 class DeviseCreateLandscapers < ActiveRecord::Migration[6.0]
   def change
     create_table :landscapers do |t|
+      t.string :name
+      t.string :description
+      t.integer :zip_code
+      t.integer :appointment_id
+      t.integer :user_id
+      t.integer :task_id
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
