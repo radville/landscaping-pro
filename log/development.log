@@ -2619,3 +2619,386 @@ Processing by Users::RegistrationsController#new as HTML
 Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 9533)
 
 
+Started POST "/users" for ::1 at 2019-10-08 13:54:04 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"gDFgsq/LczXYH6nwWplIydodrEwn+yfOecG/dpk813t6LRxTqwTBoICOdBe7pITZ/FTb6j6Z75anA4H4n3BcQQ==", "user"=>{"first_name"=>"Laura", "last_name"=>"Radville", "address_1"=>"sdfsdf", "address_2"=>"", "city"=>"sdfsdf", "state"=>"MA", "zip_code"=>"01985", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (84.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "address_1", "address_2", "city", "state", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Laura"], ["last_name", "Radville"], ["address_1", "sdfsdf"], ["address_2", ""], ["city", "sdfsdf"], ["state", "MA"], ["zip_code", "01985"], ["email", "laura.radville@gmail.com"], ["encrypted_password", "$2a$11$sy1lPI4OH62C5hx1hdNQ6ey6noRnlb1rKsZ6DAmRCFXjZW3/g7tmq"], ["created_at", "2019-10-08 17:54:04.875702"], ["updated_at", "2019-10-08 17:54:04.875702"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Redirected to http://localhost:3000/users/edit
+Completed 302 Found in 633ms (ActiveRecord: 142.5ms | Allocations: 20045)
+
+
+Started GET "/users/edit" for ::1 at 2019-10-08 13:54:05 -0400
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (42.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 213)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 108.2ms | Allocations: 3370)
+Completed 200 OK in 2074ms (Views: 1996.6ms | ActiveRecord: 44.3ms | Allocations: 1342700)
+
+
+Started GET "/users/edit" for ::1 at 2019-10-08 13:54:54 -0400
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 2.2ms | Allocations: 204)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 9.3ms | Allocations: 4207)
+Completed 200 OK in 100ms (Views: 80.4ms | ActiveRecord: 0.5ms | Allocations: 11908)
+
+
+Started POST "/users" for ::1 at 2019-10-08 13:57:59 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"gDFgsq/LczXYH6nwWplIydodrEwn+yfOecG/dpk813t6LRxTqwTBoICOdBe7pITZ/FTb6j6Z75anA4H4n3BcQQ==", "user"=>{"first_name"=>"Laura", "last_name"=>"Radville", "address_1"=>"sdfsdf", "address_2"=>"", "city"=>"sdfsdf", "state"=>"MA", "zip_code"=>"01985", "email"=>"RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 6.9ms | Allocations: 11320)
+
+
+Started GET "/" for ::1 at 2019-10-08 13:57:59 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 42.2ms | Allocations: 81)
+Completed 200 OK in 102ms (Views: 99.2ms | ActiveRecord: 0.0ms | Allocations: 4752)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-10-08 13:58:16 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 1.0ms | Allocations: 2888)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/sign_up" for ::1 at 2019-10-08 14:08:17 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (44.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 266ms (ActiveRecord: 96.5ms | Allocations: 14081)
+
+
+Started GET "/" for ::1 at 2019-10-08 14:08:18 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 203)
+Completed 200 OK in 1805ms (Views: 1709.7ms | ActiveRecord: 0.0ms | Allocations: 1333794)
+
+
+Started GET "/" for ::1 at 2019-10-08 14:08:43 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 369.8ms | Allocations: 162932)
+  Rendered application/index.html.erb within layouts/application (Duration: 373.8ms | Allocations: 163260)
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 0.0ms | Allocations: 164324)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0x00007f9a4db6b360>:0x00007f9a4db69128>
+Did you mean?  resolve_asset):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Log in", new_session_path(resource_name) %><br />
+    3: <% end %>
+    4: 
+    5: <%- if controller_name != 'sessions' %>
+  
+app/views/users/shared/_links.html.erb:2
+app/views/application/index.html.erb:3
+Started GET "/" for ::1 at 2019-10-08 14:09:18 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 159)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.0ms | Allocations: 5155)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-10-08 14:09:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 0.9ms | Allocations: 2885)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:5:in `show'
+Started GET "/users/sign_out" for ::1 at 2019-10-08 14:10:07 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 43.9ms | Allocations: 87)
+Completed 200 OK in 136ms (Views: 112.8ms | ActiveRecord: 5.9ms | Allocations: 16349)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-10-08 14:10:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-10-08 14:13:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-08 14:13:07 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 196)
+Completed 200 OK in 115ms (Views: 113.3ms | ActiveRecord: 0.0ms | Allocations: 5181)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:13:09 -0400
+Processing by LandscapersController#index as HTML
+Completed 401 Unauthorized in 47ms (ActiveRecord: 0.0ms | Allocations: 1216)
+
+
+Started GET "/landscapers/sign_in" for ::1 at 2019-10-08 14:13:09 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 26.1ms | Allocations: 619)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 133.5ms | Allocations: 4158)
+Completed 200 OK in 205ms (Views: 142.9ms | ActiveRecord: 6.0ms | Allocations: 18093)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:13:31 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 81)
+Completed 200 OK in 43ms (Views: 10.2ms | ActiveRecord: 15.6ms | Allocations: 16362)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:14:44 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (3.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:3
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 8580)
+Completed 200 OK in 36ms (Views: 22.3ms | ActiveRecord: 9.9ms | Allocations: 15401)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:15:38 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 839)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 1.0ms | Allocations: 7661)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:16:04 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 841)
+Completed 200 OK in 21ms (Views: 14.9ms | ActiveRecord: 1.0ms | Allocations: 7665)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:16:25 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 170.7ms | Allocations: 8036)
+Completed 200 OK in 185ms (Views: 180.2ms | ActiveRecord: 0.7ms | Allocations: 14764)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:16:55 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  [1m[36mTask Load (5.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:8
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 73.5ms | Allocations: 6287)
+Completed 200 OK in 90ms (Views: 68.9ms | ActiveRecord: 15.3ms | Allocations: 13024)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:20:28 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:6
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:10
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1798)
+Completed 200 OK in 75ms (Views: 70.1ms | ActiveRecord: 1.5ms | Allocations: 8619)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:20:55 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:6
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:10
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1798)
+Completed 200 OK in 21ms (Views: 14.8ms | ActiveRecord: 1.4ms | Allocations: 8621)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:21:04 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:5
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:9
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1797)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 1.4ms | Allocations: 8613)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:21:10 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:6
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:10
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1798)
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 1.3ms | Allocations: 8619)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:21:18 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:5
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:9
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 1797)
+Completed 200 OK in 50ms (Views: 38.8ms | ActiveRecord: 7.2ms | Allocations: 8615)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:21:24 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.6ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:6
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:10
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1798)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 1.2ms | Allocations: 8620)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:21:30 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:6
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:10
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1798)
+Completed 200 OK in 25ms (Views: 17.8ms | ActiveRecord: 1.3ms | Allocations: 8630)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:22:01 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:6
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:10
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1798)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 1.2ms | Allocations: 8616)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-08 14:22:06 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:5
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "landscaper_tasks" ON "tasks"."id" = "landscaper_tasks"."task_id" WHERE "landscaper_tasks"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:9
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1802)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 1.1ms | Allocations: 8622)
+
+

@@ -12,6 +12,7 @@ class Landscapers::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    redirect_to user_path
   end
 
   # GET /resource/edit
