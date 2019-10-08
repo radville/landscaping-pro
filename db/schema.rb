@@ -27,7 +27,9 @@ ActiveRecord::Schema.define(version: 2019_10_07_174455) do
   end
 
   create_table "landscapers", force: :cascade do |t|
-    t.string "name"
+    t.string "business_name"
+    t.string "owner_first_name"
+    t.string "owner_last_name"
     t.string "description"
     t.integer "zip_code"
     t.integer "appointment_id"
@@ -56,7 +58,8 @@ ActiveRecord::Schema.define(version: 2019_10_07_174455) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.string "address_1"
     t.string "address_2"
     t.string "city"
