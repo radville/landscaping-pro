@@ -1399,3 +1399,87 @@ Migrating to CreateTableLandscapersTasks (20191007174455)
   [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "address_1", "address_2", "city", "state", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Bill"], ["last_name", "Weissman"], ["address_1", "68 Pine Street"], ["address_2", "Apt. 3B"], ["city", "New Carrolton"], ["state", "NV"], ["zip_code", "66044"], ["email", "billw@hotmail.com"], ["encrypted_password", "$2a$11$gBH4HduMW7mmiw5zrs8J1.bb6kAQEI5Cs50nInsv9yvpKfMA5XUjC"], ["created_at", "2019-10-08 11:38:17.428236"], ["updated_at", "2019-10-08 11:38:17.428236"]]
   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (33.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (1025.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landscaping_pro_development"[0m
+  [1m[35m (593.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landscaping_pro_test"[0m
+  [1m[35m (586.5ms)[0m  [1m[35mCREATE DATABASE "landscaping_pro_development" ENCODING = 'unicode'[0m
+  [1m[35m (556.3ms)[0m  [1m[35mCREATE DATABASE "landscaping_pro_test" ENCODING = 'unicode'[0m
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (49.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2810410267587328875)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20191007165626)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2810410267587328875)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2810410267587328875)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20191007165626)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (97.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "address_1" character varying NOT NULL, "address_2" character varying, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip_code" character varying NOT NULL, "landscaper_id" integer, "appointment_id" integer, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007165626"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateLandscapers (20191007165838)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "landscapers" ("id" bigserial primary key, "business_name" character varying, "owner_first_name" character varying, "owner_last_name" character varying, "description" character varying, "zip_code" character varying, "appointment_id" integer, "user_id" integer, "task_id" integer, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_landscapers_on_email" ON "landscapers"  ("email")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_landscapers_on_reset_password_token" ON "landscapers"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007165838"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAppointments (20191007174210)
+  [1m[35m (34.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "landscaper_id" integer, "user_id" integer, "datetime" timestamp, "frequency" character varying, "recurring" boolean DEFAULT FALSE, "price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007174210"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTasks (20191007174402)
+  [1m[35m (41.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "landscaper_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007174402"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTableLandscapersTasks (20191007174455)
+  [1m[35m (28.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "table_landscapers_tasks" ("id" bigserial primary key, "landscaper_id" integer, "task_id" integer)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007174455"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-08 11:56:21.270693"], ["updated_at", "2019-10-08 11:56:21.270693"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2810410267587328875)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "skhdf@gnail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "skhdf@gnail.com"], ["encrypted_password", "$2a$11$uSLQsk8rjmOAk4wrPnge/OynNoV6ouNottXZgh9RZVLu/6uJgL1aG"], ["created_at", "2019-10-08 11:56:51.715935"], ["updated_at", "2019-10-08 11:56:51.715935"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "skhdf@gnail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("address_1", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address_1", "dfsdf"], ["email", "skhdf@gnail.com"], ["encrypted_password", "$2a$11$DrmyOYZ9spcYDMzmr0zmD.1ZyENYGNtLXy8XpTP9Dp5iUpfDDXY/G"], ["created_at", "2019-10-08 11:57:02.344175"], ["updated_at", "2019-10-08 11:57:02.344175"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "skhdf@gnail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("address_1", "city", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address_1", "dfsdf"], ["city", "sdfsdf"], ["email", "skhdf@gnail.com"], ["encrypted_password", "$2a$11$MBfJMVP4kRilM43/qMJ9eebIiOlBiWUegXBnAYmYTmDuIGmY8c9My"], ["created_at", "2019-10-08 11:57:08.913138"], ["updated_at", "2019-10-08 11:57:08.913138"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "skhdf@gnail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("address_1", "city", "state", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["address_1", "dfsdf"], ["city", "sdfsdf"], ["state", "sfsd"], ["email", "skhdf@gnail.com"], ["encrypted_password", "$2a$11$HYH30BRrJsIoO8F5.B4RxesZakbwkLdA9JZqrQyCTfFZ8t5y4.dOW"], ["created_at", "2019-10-08 11:57:16.183841"], ["updated_at", "2019-10-08 11:57:16.183841"]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "skhdf@gnail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("address_1", "city", "state", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["address_1", "dfsdf"], ["city", "sdfsdf"], ["state", "sfsd"], ["zip_code", "01985"], ["email", "skhdf@gnail.com"], ["encrypted_password", "$2a$11$sLA1ASIKSljFznH37Q4URO2hkhvZw.CJdFRZWs1Bt5d23UUDtz0ee"], ["created_at", "2019-10-08 11:57:25.380603"], ["updated_at", "2019-10-08 11:57:25.380603"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (42.2ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "happymowers@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLandscaper Create (8.1ms)[0m  [1m[32mINSERT INTO "landscapers" ("business_name", "owner_first_name", "owner_last_name", "description", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["business_name", "Sarah's Happy Mowers"], ["owner_first_name", "Sarah"], ["owner_last_name", "McMurdo"], ["description", "We love mowing lawns!"], ["zip_code", "01962"], ["email", "happymowers@gmail.com"], ["encrypted_password", "$2a$11$ZEouwoS3fRidKyzarhoPt.J0Ol2hFeOel.Kf.//VGN7g04q4YAq1O"], ["created_at", "2019-10-08 12:00:27.423776"], ["updated_at", "2019-10-08 12:00:27.423776"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "billw@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "address_1", "address_2", "city", "state", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Bill"], ["last_name", "Weissman"], ["address_1", "68 Pine Street"], ["address_2", "Apt. 3B"], ["city", "New Carrolton"], ["state", "NV"], ["zip_code", "66044"], ["email", "billw@hotmail.com"], ["encrypted_password", "$2a$11$JE7PdiFOfhKcAudPQo1bROY3D.8.Y9brdsMnophYMWMwgQL6aU1ke"], ["created_at", "2019-10-08 12:00:34.871108"], ["updated_at", "2019-10-08 12:00:34.871108"]]
+  [1m[35m (42.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAppointment Create (43.0ms)[0m  [1m[32mINSERT INTO "appointments" ("landscaper_id", "user_id", "datetime", "frequency", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["landscaper_id", 1], ["user_id", 6], ["datetime", "2019-10-08 12:00:39.053603"], ["frequency", "weekly"], ["price", 50], ["created_at", "2019-10-08 12:00:39.055516"], ["updated_at", "2019-10-08 12:00:39.055516"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
