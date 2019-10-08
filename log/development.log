@@ -1377,3 +1377,25 @@ Migrating to CreateTableLandscapersTasks (20191007174455)
   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2810410267587328875)[0m
   [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (88.8ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "sarah@mower.com"], ["LIMIT", 1]]
+  [1m[35m (31.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (28.0ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "l@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLandscaper Create (1.2ms)[0m  [1m[32mINSERT INTO "landscapers" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "l@gmail.com"], ["encrypted_password", "$2a$11$XqEWc2zWKikgmt1gF8c7Ruu2e7vM5JIUK.eGgkgBzU0SMDSKTVNPa"], ["created_at", "2019-10-08 11:32:59.226533"], ["updated_at", "2019-10-08 11:32:59.226533"]]
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "l@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "happymowers@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLandscaper Create (0.7ms)[0m  [1m[32mINSERT INTO "landscapers" ("business_name", "owner_first_name", "owner_last_name", "description", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["business_name", "Sarah's Happy Mowers"], ["owner_first_name", "Sarah"], ["owner_last_name", "McMurdo"], ["description", "We love mowing lawns!"], ["zip_code", "01962"], ["email", "happymowers@gmail.com"], ["encrypted_password", "$2a$11$ruj/GStgPZobzzINWNOjyep52K.gVoec793qjfrrurGPlh3TuYoau"], ["created_at", "2019-10-08 11:34:20.382507"], ["updated_at", "2019-10-08 11:34:20.382507"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "l@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "billw@hotmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "address_1", "address_2", "city", "state", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Bill"], ["last_name", "Weissman"], ["address_1", "68 Pine Street"], ["address_2", "Apt. 3B"], ["city", "New Carrolton"], ["state", "NV"], ["zip_code", "66044"], ["email", "billw@hotmail.com"], ["encrypted_password", "$2a$11$gBH4HduMW7mmiw5zrs8J1.bb6kAQEI5Cs50nInsv9yvpKfMA5XUjC"], ["created_at", "2019-10-08 11:38:17.428236"], ["updated_at", "2019-10-08 11:38:17.428236"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
