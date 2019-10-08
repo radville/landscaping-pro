@@ -22,6 +22,6 @@ class Landscapers::SessionsController < Devise::SessionsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_in_params
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:business_name, :owner_first_name, :owner_last_name, :description, :zip_code])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:business_name, :owner_name, :description, :zip_code])
   end
 end
