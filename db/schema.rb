@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_174455) do
+ActiveRecord::Schema.define(version: 2019_10_08_134035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,15 +26,17 @@ ActiveRecord::Schema.define(version: 2019_10_07_174455) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "landscaper_tasks", force: :cascade do |t|
+    t.integer "task_id", null: false
+    t.integer "landscaper_id", null: false
+  end
+
   create_table "landscapers", force: :cascade do |t|
     t.string "business_name"
     t.string "owner_first_name"
     t.string "owner_last_name"
     t.string "description"
     t.string "zip_code"
-    t.integer "appointment_id"
-    t.integer "user_id"
-    t.integer "task_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -46,13 +48,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_174455) do
     t.index ["reset_password_token"], name: "index_landscapers_on_reset_password_token", unique: true
   end
 
-  create_table "table_landscapers_tasks", force: :cascade do |t|
-    t.integer "landscaper_id"
-    t.integer "task_id"
-  end
-
   create_table "tasks", force: :cascade do |t|
-    t.integer "landscaper_id"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -66,8 +62,6 @@ ActiveRecord::Schema.define(version: 2019_10_07_174455) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "zip_code", null: false
-    t.integer "landscaper_id"
-    t.integer "appointment_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

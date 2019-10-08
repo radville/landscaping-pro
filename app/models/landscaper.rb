@@ -5,6 +5,6 @@ class Landscaper < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :appointments
   has_many :users, through: :appointments
-  has_many :tasks_landscapers
-  has_many :tasks, through: :tasks_landscapers
+  has_many :landscaper_tasks
+  has_many :tasks, through: :landscaper_tasks
 end

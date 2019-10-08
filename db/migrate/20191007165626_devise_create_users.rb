@@ -10,8 +10,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :city,               null: false
       t.string :state,              null: false
       t.string :zip_code,           null: false
-      t.integer :landscaper_id
-      t.integer :appointment_id
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

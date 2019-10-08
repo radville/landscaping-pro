@@ -8,9 +8,6 @@ class DeviseCreateLandscapers < ActiveRecord::Migration[6.0]
       t.string :owner_last_name
       t.string :description
       t.string :zip_code
-      t.integer :appointment_id
-      t.integer :user_id
-      t.integer :task_id
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
