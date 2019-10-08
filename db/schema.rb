@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_174455) do
     t.string "owner_first_name"
     t.string "owner_last_name"
     t.string "description"
-    t.integer "zip_code"
+    t.string "zip_code"
     t.integer "appointment_id"
     t.integer "user_id"
     t.integer "task_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_174455) do
     t.string "address_2"
     t.string "city"
     t.string "state"
-    t.integer "zip_code"
+    t.string "zip_code"
     t.integer "landscaper_id"
     t.integer "appointment_id"
     t.string "email", default: "", null: false

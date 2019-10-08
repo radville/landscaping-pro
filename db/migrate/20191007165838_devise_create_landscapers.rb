@@ -7,7 +7,7 @@ class DeviseCreateLandscapers < ActiveRecord::Migration[6.0]
       t.string :owner_first_name
       t.string :owner_last_name
       t.string :description
-      t.integer :zip_code
+      t.string :zip_code
       t.integer :appointment_id
       t.integer :user_id
       t.integer :task_id
