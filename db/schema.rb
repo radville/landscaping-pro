@@ -33,8 +33,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_134035) do
 
   create_table "landscapers", force: :cascade do |t|
     t.string "business_name"
-    t.string "owner_first_name"
-    t.string "owner_last_name"
+    t.string "owner_name"
     t.string "description"
     t.string "zip_code"
     t.string "email", default: "", null: false

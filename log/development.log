@@ -3074,3 +3074,465 @@ Migrating to CreateLandscaperTasks (20191008134035)
   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2810410267587328875)[0m
   [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (25.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (268.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landscaping_pro_development"[0m
+  [1m[35m (207.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landscaping_pro_test"[0m
+  [1m[35m (574.4ms)[0m  [1m[35mCREATE DATABASE "landscaping_pro_development" ENCODING = 'unicode'[0m
+  [1m[35m (535.5ms)[0m  [1m[35mCREATE DATABASE "landscaping_pro_test" ENCODING = 'unicode'[0m
+  [1m[35m (43.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (44.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2810410267587328875)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20191007165626)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "address_1" character varying NOT NULL, "address_2" character varying, "city" character varying NOT NULL, "state" character varying NOT NULL, "zip_code" character varying NOT NULL, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007165626"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateLandscapers (20191007165838)
+  [1m[35m (40.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "landscapers" ("id" bigserial primary key, "business_name" character varying, "owner_name" character varying, "description" character varying, "zip_code" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_landscapers_on_email" ON "landscapers"  ("email")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_landscapers_on_reset_password_token" ON "landscapers"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007165838"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAppointments (20191007174210)
+  [1m[35m (24.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "landscaper_id" integer, "user_id" integer, "datetime" timestamp, "frequency" character varying, "recurring" boolean DEFAULT FALSE, "price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007174210"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTasks (20191007174402)
+  [1m[35m (40.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191007174402"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLandscaperTasks (20191008134035)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "landscaper_tasks" ("id" bigserial primary key, "task_id" integer NOT NULL, "landscaper_id" integer NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191008134035"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-08 18:42:49.968111"], ["updated_at", "2019-10-08 18:42:49.968111"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2810410267587328875)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (25.3ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "happymowers@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLandscaper Create (1.0ms)[0m  [1m[32mINSERT INTO "landscapers" ("business_name", "owner_name", "description", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["business_name", "Sarah's Happy Mowers"], ["owner_name", "Sarah McMurdo"], ["description", "We love mowing lawns!"], ["zip_code", "01962"], ["email", "happymowers@gmail.com"], ["encrypted_password", "$2a$11$qHXxyhUAcFkCzfIJj0FE0.QDxPSAS9CFf09ftjpYO49LTy6RWBpJ6"], ["created_at", "2019-10-08 18:43:38.624086"], ["updated_at", "2019-10-08 18:43:38.624086"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "landscape@gmail.com"], ["LIMIT", 1]]
+  [1m[36mLandscaper Create (0.5ms)[0m  [1m[32mINSERT INTO "landscapers" ("business_name", "owner_name", "description", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["business_name", "Restful Landscaping"], ["owner_name", "Richard"], ["description", "Providing complete landscaping services"], ["zip_code", "22034"], ["email", "landscape@gmail.com"], ["encrypted_password", "$2a$11$aYaZytqIPfB5Nq9LGvapLer6Z.1ql/SCIyPCS51yiWaP2Wy9136ce"], ["created_at", "2019-10-08 18:43:38.751996"], ["updated_at", "2019-10-08 18:43:38.751996"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "landscape@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "landscapers" WHERE "landscapers"."email" = $1 LIMIT $2[0m  [["email", "happymowers@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/landscapers/1" for ::1 at 2019-10-08 14:49:15 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (46.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 112ms (ActiveRecord: 52.8ms | Allocations: 4228)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-08 14:49:15 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 43.5ms | Allocations: 699)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 150.4ms | Allocations: 4995)
+Completed 200 OK in 1772ms (Views: 1716.5ms | ActiveRecord: 0.0ms | Allocations: 1348970)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-08 14:49:52 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.9ms | Allocations: 607)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3646)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.0ms | Allocations: 10090)
+
+
+Started GET "/users/password/new" for ::1 at 2019-10-08 14:50:56 -0400
+Processing by Users::PasswordsController#new as HTML
+  Rendering users/passwords/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 213)
+  Rendered users/shared/_links.html.erb (Duration: 435.7ms | Allocations: 189972)
+  Rendered users/passwords/new.html.erb within layouts/application (Duration: 442.9ms | Allocations: 191252)
+Completed 500 Internal Server Error in 446ms (ActiveRecord: 0.0ms | Allocations: 193144)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_user_session' for #<#<Class:0x00007fd2b1919318>:0x00007fd2b19232a0>
+Did you mean?  destroy_user_session_url
+               destroy_user_session_path):
+    3: <% end %>
+    4: 
+    5: <%- if controller_name != 'sessions' %>
+    6:   <%= link_to "Log out", destroy_user_session(resource_name) %><br />
+    7: <% end %>
+    8: 
+    9: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+app/views/users/shared/_links.html.erb:6
+app/views/users/passwords/new.html.erb:16
+Started GET "/users/sign_in" for ::1 at 2019-10-08 14:51:08 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.7ms | Allocations: 144)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2480)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.0ms | Allocations: 7116)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-08 15:31:30 -0400
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 41.2ms | Allocations: 699)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 287.3ms | Allocations: 6873)
+Completed 200 OK in 2014ms (Views: 1944.5ms | ActiveRecord: 29.1ms | Allocations: 1351854)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-08 15:32:21 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 3.4ms | Allocations: 607)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1973)
+Completed 200 OK in 69ms (Views: 67.5ms | ActiveRecord: 0.0ms | Allocations: 8410)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-08 15:32:27 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"IUTe5NYx0I1WKXxQwHB8dpo8LNJSwTo/VO2FKdufasrbWKIF0v5iGA64obchTbBmvHVbdEuj8meKL7un3dPh8A==", "user"=>{"email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (37.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 90ms (ActiveRecord: 37.4ms | Allocations: 2649)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"IUTe5NYx0I1WKXxQwHB8dpo8LNJSwTo/VO2FKdufasrbWKIF0v5iGA64obchTbBmvHVbdEuj8meKL7un3dPh8A==", "user"=>{"email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1057)
+Completed 200 OK in 133ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5500)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-08 15:33:27 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 46.6ms | Allocations: 389)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 52.6ms | Allocations: 1748)
+Completed 200 OK in 176ms (Views: 172.8ms | ActiveRecord: 0.0ms | Allocations: 8154)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-08 15:33:43 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 213)
+  Rendered users/shared/_links.html.erb (Duration: 486.1ms | Allocations: 190016)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 494.6ms | Allocations: 193759)
+Completed 500 Internal Server Error in 528ms (ActiveRecord: 0.0ms | Allocations: 195712)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_user_session' for #<#<Class:0x00007ffabde3fb88>:0x00007ffac1116318>
+Did you mean?  destroy_user_session_url
+               destroy_user_session_path):
+    3: <% end %>
+    4: 
+    5: <%- if controller_name != 'sessions' %>
+    6:   <%= link_to "Log out", destroy_user_session(resource_name) %><br />
+    7: <% end %>
+    8: 
+    9: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+app/views/users/shared/_links.html.erb:6
+app/views/users/registrations/new.html.erb:70
+app/controllers/users/registrations_controller.rb:9:in `new'
+Started GET "/users/sign_in" for ::1 at 2019-10-08 15:33:48 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 80)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 994)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 5629)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-08 15:33:55 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/shared/_links.html.erb (Duration: 480.5ms | Allocations: 189663)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 487.4ms | Allocations: 192257)
+Completed 500 Internal Server Error in 490ms (ActiveRecord: 0.0ms | Allocations: 193059)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_user_session' for #<#<Class:0x00007ffabde3fb88>:0x00007ffac3abaa70>
+Did you mean?  destroy_user_session_url
+               destroy_user_session_path):
+    3: <% end %>
+    4: 
+    5: <%- if controller_name != 'sessions' %>
+    6:   <%= link_to "Log out", destroy_user_session(resource_name) %><br />
+    7: <% end %>
+    8: 
+    9: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+app/views/users/shared/_links.html.erb:6
+app/views/users/registrations/new.html.erb:70
+app/controllers/users/registrations_controller.rb:9:in `new'
+Started GET "/users/sign_up" for ::1 at 2019-10-08 15:34:09 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 2.6ms | Allocations: 204)
+  Rendered users/shared/_links.html.erb (Duration: 1.5ms | Allocations: 334)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 4123)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 10480)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-08 15:35:28 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 204)
+  Rendered users/shared/_links.html.erb (Duration: 472.2ms | Allocations: 189944)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 482.7ms | Allocations: 193734)
+Completed 500 Internal Server Error in 491ms (ActiveRecord: 0.0ms | Allocations: 196096)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_user_session' for #<#<Class:0x00007ffabec79078>:0x00007ffabec83410>
+Did you mean?  destroy_user_session_url
+               destroy_user_session_path):
+    3: <% end %>
+    4: 
+    5: <%- if controller_name != 'sessions' %>
+    6:   <%= link_to "Log out", destroy_user_session(resource_name), :method => :post %><br />
+    7: <% end %>
+    8: 
+    9: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+app/views/users/shared/_links.html.erb:6
+app/views/users/registrations/new.html.erb:70
+app/controllers/users/registrations_controller.rb:9:in `new'
+Started GET "/users/sign_up" for ::1 at 2019-10-08 15:35:39 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 204)
+  Rendered users/shared/_links.html.erb (Duration: 1.6ms | Allocations: 454)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4243)
+Completed 200 OK in 128ms (Views: 126.7ms | ActiveRecord: 0.0ms | Allocations: 10599)
+
+
+Started POST "/users/sign_out.user" for ::1 at 2019-10-08 15:35:40 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out.user"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users/sign_out.user" for ::1 at 2019-10-08 15:35:56 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign_out.user"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2019-10-08 15:35:59 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 2.9ms | Allocations: 204)
+  Rendered users/shared/_links.html.erb (Duration: 2.4ms | Allocations: 451)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 4240)
+Completed 200 OK in 83ms (Views: 81.8ms | ActiveRecord: 0.0ms | Allocations: 10606)
+
+
+Started DELETE "/users/sign_out.user" for ::1 at 2019-10-08 15:36:01 -0400
+Processing by Users::SessionsController#destroy as 
+  Parameters: {"authenticity_token"=>"HECHxQ/A2iaMmDKhcsNwvYAuw9Ko3HwsceaWAMsjCiPmXPskCw9os9QJ70aT/rytpme0dLG+tHSvJKiOzW+BGQ=="}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 468)
+
+
+Started DELETE "/users/sign_out.user" for ::1 at 2019-10-08 15:36:04 -0400
+Processing by Users::SessionsController#destroy as 
+  Parameters: {"authenticity_token"=>"HECHxQ/A2iaMmDKhcsNwvYAuw9Ko3HwsceaWAMsjCiPmXPskCw9os9QJ70aT/rytpme0dLG+tHSvJKiOzW+BGQ=="}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 454)
+
+
+Started DELETE "/users/sign_out.user" for ::1 at 2019-10-08 15:36:07 -0400
+Processing by Users::SessionsController#destroy as 
+  Parameters: {"authenticity_token"=>"HECHxQ/A2iaMmDKhcsNwvYAuw9Ko3HwsceaWAMsjCiPmXPskCw9os9QJ70aT/rytpme0dLG+tHSvJKiOzW+BGQ=="}
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 458)
+
+
+Started POST "/users" for ::1 at 2019-10-08 15:36:19 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"HECHxQ/A2iaMmDKhcsNwvYAuw9Ko3HwsceaWAMsjCiPmXPskCw9os9QJ70aT/rytpme0dLG+tHSvJKiOzW+BGQ==", "user"=>{"first_name"=>"Daniel", "last_name"=>"", "address_1"=>"", "address_2"=>"", "city"=>"", "state"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Create (87.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "address_1", "address_2", "city", "state", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Daniel"], ["last_name", ""], ["address_1", ""], ["address_2", ""], ["city", ""], ["state", ""], ["zip_code", ""], ["email", "laura.radville@gmail.com"], ["encrypted_password", "$2a$11$9I6WFzb8ru6VTu1K1236IuoZP/Lw6AUGPSQjbt6gea1Bg/cdOoKjq"], ["created_at", "2019-10-08 19:36:19.653560"], ["updated_at", "2019-10-08 19:36:19.653560"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Redirected to http://localhost:3000/landscapers/1
+Completed 302 Found in 238ms (ActiveRecord: 89.8ms | Allocations: 6955)
+
+
+Started GET "/landscapers/1" for ::1 at 2019-10-08 15:36:19 -0400
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLandscaper Load (83.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 43.4ms | Allocations: 119)
+Completed 200 OK in 217ms (Views: 98.4ms | ActiveRecord: 91.6ms | Allocations: 14641)
+
+
+Started POST "/users" for ::1 at 2019-10-08 15:38:43 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"HECHxQ/A2iaMmDKhcsNwvYAuw9Ko3HwsceaWAMsjCiPmXPskCw9os9QJ70aT/rytpme0dLG+tHSvJKiOzW+BGQ==", "user"=>{"first_name"=>"Daniel", "last_name"=>"", "address_1"=>"", "address_2"=>"", "city"=>"", "state"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILL@GMAIL.COM", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 6.5ms | Allocations: 11280)
+
+
+Started GET "/" for ::1 at 2019-10-08 15:38:43 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 198)
+Completed 200 OK in 61ms (Views: 58.5ms | ActiveRecord: 0.0ms | Allocations: 4862)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-10-08 15:38:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-08 15:38:53 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 70)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 4381)
+
+
+Started GET "/" for ::1 at 2019-10-08 15:39:33 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 202)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms | Allocations: 5178)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-08 15:39:34 -0400
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UaP1tyjd5s00TIsMchGaBJcb4HOIUWNw66P2kU5iANWrv4lWLBJUWGzdVuuTLFYUsVKX1ZEzqyg1YcgfSC6L7w=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms (ActiveRecord: 0.4ms | Allocations: 3192)
+
+
+Started GET "/" for ::1 at 2019-10-08 15:39:34 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4392)
+
+

@@ -4,8 +4,7 @@ class DeviseCreateLandscapers < ActiveRecord::Migration[6.0]
   def change
     create_table :landscapers do |t|
       t.string :business_name
-      t.string :owner_first_name
-      t.string :owner_last_name
+      t.string :owner_name
       t.string :description
       t.string :zip_code
 
