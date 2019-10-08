@@ -8,5 +8,4 @@ class LandscapersController < ApplicationController
     def index
         @landscapers = Landscaper.all
     end
-
 end

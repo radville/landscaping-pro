@@ -2423,3 +2423,199 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 9177)
 
 
+Started GET "/landscapers/sign_in" for ::1 at 2019-10-08 13:15:49 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 2.4ms | Allocations: 636)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 266.1ms | Allocations: 6311)
+Completed 200 OK in 2112ms (Views: 2036.1ms | ActiveRecord: 52.4ms | Allocations: 1349632)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:16:08 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"lInnugRdrXCsVv4qGoYy12odIUT3sL4yh0ugxds0LGxulZtbAJIf5fTHI837u/7HTFRW4u7SdmpZiZ5L3XinVg==", "landscaper"=>{"business_name"=>"Greener Pastures", "owner_first_name"=>"Radville", "description"=>"", "zip_code"=>"22044", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (32.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 42ms (ActiveRecord: 32.2ms | Allocations: 2794)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"lInnugRdrXCsVv4qGoYy12odIUT3sL4yh0ugxds0LGxulZtbAJIf5fTHI837u/7HTFRW4u7SdmpZiZ5L3XinVg==", "landscaper"=>{"business_name"=>"Greener Pastures", "owner_first_name"=>"Radville", "description"=>"", "zip_code"=>"22044", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.4ms | Allocations: 133)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2097)
+Completed 200 OK in 134ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 6566)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:17:31 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZtnweqvOqEjtFYMi9E/k1GWHzkNRoe+OcAfemSFfEGWcxYybrwEa3bWEXsUVcijEQ8655UjDJ9auxeAXJxObXw==", "landscaper"=>{"business_name"=>"Greener Pastures", "owner_first_name"=>"R", "description"=>"", "zip_code"=>"22045", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (0.8ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.8ms | Allocations: 2046)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"ZtnweqvOqEjtFYMi9E/k1GWHzkNRoe+OcAfemSFfEGWcxYybrwEa3bWEXsUVcijEQ8655UjDJ9auxeAXJxObXw==", "landscaper"=>{"business_name"=>"Greener Pastures", "owner_first_name"=>"R", "description"=>"", "zip_code"=>"22045", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.2ms | Allocations: 133)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2087)
+Completed 200 OK in 136ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 6464)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:17:45 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"muT1bdHqMtzOvcwD4o/66D0w1AlGCdiT5j3zTAsOXwFg+ImM1SWASZYsEeQDsjb4G3mjr19rEMs4/83CDULUOw==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (1.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 1.2ms | Allocations: 2023)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"muT1bdHqMtzOvcwD4o/66D0w1AlGCdiT5j3zTAsOXwFg+ImM1SWASZYsEeQDsjb4G3mjr19rEMs4/83CDULUOw==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.2ms | Allocations: 133)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2087)
+Completed 200 OK in 129ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 6463)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:20:04 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"33YoVKZcrECimQ40DqwFhgp4NHkvvMHhIFBJNHocdZYlalS1opMe1foI09PvkcmWLDFD3zbeCbn+kne6fFD+rA==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 6.6ms | Allocations: 2952)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"33YoVKZcrECimQ40DqwFhgp4NHkvvMHhIFBJNHocdZYlalS1opMe1foI09PvkcmWLDFD3zbeCbn+kne6fFD+rA==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2114)
+Completed 200 OK in 140ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 13768)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:21:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"UAASCNASbJIrvKZhfZW9W2BiULjWvsHsuguBMSbNd2qqHG7p1N3eB3Mte4acqHFLRisnHs/cCbRkyb+/IIH8UA==", "landscaper"=>{"business_name"=>"Greener", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 9ms (ActiveRecord: 5.5ms | Allocations: 2970)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"UAASCNASbJIrvKZhfZW9W2BiULjWvsHsuguBMSbNd2qqHG7p1N3eB3Mte4acqHFLRisnHs/cCbRkyb+/IIH8UA==", "landscaper"=>{"business_name"=>"Greener", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2115)
+Completed 200 OK in 140ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 13722)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:22:38 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"X1fHS0PBjRR0egwV0ymYlaFDkPBKZG+yQLUbEaiw6B+lS7uqRw4/gSzr0fIyFFSFhwrnVlMGp+qedyWfrvxjJQ==", "landscaper"=>{"business_name"=>"Green pastures", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (1.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (ActiveRecord: 9.5ms | Allocations: 2991)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"X1fHS0PBjRR0egwV0ymYlaFDkPBKZG+yQLUbEaiw6B+lS7uqRw4/gSzr0fIyFFSFhwrnVlMGp+qedyWfrvxjJQ==", "landscaper"=>{"business_name"=>"Green pastures", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2114)
+Completed 200 OK in 148ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 13758)
+
+
+Started GET "/landscapers/sign_in" for ::1 at 2019-10-08 13:27:57 -0400
+Started GET "/landscapers/sign_in" for ::1 at 2019-10-08 13:27:57 -0400
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+Processing by Devise::SessionsController#new as HTML
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 25.5ms | Allocations: 658)
+  Rendered landscapers/shared/_links.html.erb (Duration: 25.7ms | Allocations: 786)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 342.7ms | Allocations: 9988)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 340.0ms | Allocations: 9903)
+Completed 200 OK in 2897ms (Views: 2824.5ms | ActiveRecord: 68.3ms | Allocations: 2621253)
+
+
+Completed 200 OK in 2948ms (Views: 2836.7ms | ActiveRecord: 50.0ms | Allocations: 2622393)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:28:13 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"35eXmr+ca1cyva1jlglCK9WJVetpTXRx7sI24T6RnVQli+t7u1PZwmoscIR3NI4788AiTXAvvCkwAAhvON0Wbg==", "landscaper"=>{"business_name"=>"Green pastures", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (26.1ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 54ms (ActiveRecord: 26.7ms | Allocations: 2667)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"35eXmr+ca1cyva1jlglCK9WJVetpTXRx7sI24T6RnVQli+t7u1PZwmoscIR3NI4788AiTXAvvCkwAAhvON0Wbg==", "landscaper"=>{"business_name"=>"Green pastures", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.2ms | Allocations: 133)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2097)
+Completed 200 OK in 135ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 6573)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:33:03 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"56Kalt3V1CMeWxS15e6SSGTdfiezhvtAAJgxDVzlhkYdvuZ32RpmtkbKyVIE015YQpQJgarkMxjeWg+DWqkNfA==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (43.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 58ms (ActiveRecord: 52.2ms | Allocations: 3143)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"56Kalt3V1CMeWxS15e6SSGTdfiezhvtAAJgxDVzlhkYdvuZ32RpmtkbKyVIE015YQpQJgarkMxjeWg+DWqkNfA==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2114)
+Completed 200 OK in 187ms (Views: 62.4ms | ActiveRecord: 0.0ms | Allocations: 13775)
+
+
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-08 13:36:39 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+sWBmgWELdDNErgVRvkA91Kw5tms7mi4AXeM4aC7qkoA2f17AUufRZWDZfKnxMzndPmRf7WMoODftbJvpvchcA==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 17ms (ActiveRecord: 8.0ms | Allocations: 2994)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"+sWBmgWELdDNErgVRvkA91Kw5tms7mi4AXeM4aC7qkoA2f17AUufRZWDZfKnxMzndPmRf7WMoODftbJvpvchcA==", "landscaper"=>{"business_name"=>"", "owner_first_name"=>"", "description"=>"", "zip_code"=>"", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+[31mUnpermitted parameters: :business_name, :owner_first_name, :description, :zip_code[0m
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/shared/_links.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2113)
+Completed 200 OK in 197ms (Views: 60.1ms | ActiveRecord: 0.0ms | Allocations: 13721)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-08 13:41:08 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 3.1ms | Allocations: 626)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2150)
+Completed 200 OK in 85ms (Views: 66.7ms | ActiveRecord: 5.6ms | Allocations: 17918)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-10-08 13:44:56 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 2.0ms | Allocations: 554)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 88.4ms | Allocations: 3809)
+Completed 200 OK in 148ms (Views: 146.6ms | ActiveRecord: 0.0ms | Allocations: 10220)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-08 13:45:01 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 213)
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 125)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3862)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 9533)
+
+
