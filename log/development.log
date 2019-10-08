@@ -3002,3 +3002,34 @@ Processing by LandscapersController#index as HTML
 Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 1.1ms | Allocations: 8622)
 
 
+Started GET "/landscapers/1" for ::1 at 2019-10-08 14:23:24 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (26.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLandscaper Load (1.9ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 203)
+Completed 200 OK in 1639ms (Views: 1451.1ms | ActiveRecord: 65.5ms | Allocations: 1355302)
+
+
+Started GET "/landscapers/1" for ::1 at 2019-10-08 14:23:48 -0400
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLandscaper Load (2.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 99)
+Completed 200 OK in 74ms (Views: 66.9ms | ActiveRecord: 2.4ms | Allocations: 7485)
+
+
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (83.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (496.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landscaping_pro_development"[0m
+  [1m[35m (232.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "landscaping_pro_test"[0m

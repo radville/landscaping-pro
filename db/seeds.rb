@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-l1 = Landscaper.create!(email: "happymowers@gmail.com", password: "akjhhdkjhf", business_name: "Sarah's Happy Mowers", owner_first_name: "Sarah", owner_last_name: "McMurdo", description: "We love mowing lawns!", zip_code: "01962")
-l2 = Landscaper.create!(email: "landscape@gmail.com", password: "08fgjkhjshdkfs", business_name: "Restful Landscaping", owner_first_name: "Richard", owner_last_name: "Smith", description: "Providing complete landscaping services", zip_code: "22034")
+l1 = Landscaper.create!(email: "happymowers@gmail.com", password: "akjhhdkjhf", business_name: "Sarah's Happy Mowers", owner_name: "Sarah McMurdo", description: "We love mowing lawns!", zip_code: "01962")
+l2 = Landscaper.create!(email: "landscape@gmail.com", password: "08fgjkhjshdkfs", business_name: "Restful Landscaping", owner_name: "Richard", description: "Providing complete landscaping services", zip_code: "22034")
 l3 = Landscaper.create!(email: "landscape@gmail.com", password: "08fgjkhjshdkfs", business_name: "Springfield Lawn Care", zip_code: "55867")
 
 u1 = User.create!(first_name: "Bill", last_name: "Weissman", address_1: "68 Pine Street", address_2: "Apt. 3B", city: "New Carrolton", state: "NV", zip_code: "66044", email: "billw@hotmail.com", password: "0198jhjfdhf")
