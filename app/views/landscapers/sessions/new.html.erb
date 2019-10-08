@@ -1,6 +1,31 @@
-<h2>Log in</h2>
+<h2>Landscaper Log In</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :business_name %><br />
+    <%= f.text_field :business_name, autofocus: true, autocomplete: "business_name" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :owner_first_name %><br />
+    <%= f.text_field :owner_first_name, autofocus: true, autocomplete: "owner_first_name" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :owner_last_name %><br />
+    <%= f.text_field :owner_first_name, autofocus: true, autocomplete: "owner_last_name" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %><br /> <p>Tell clients about your business!</p>
+    <%= f.text_field :description, autofocus: true, autocomplete: "description" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code, autofocus: true, autocomplete: "zip_code" %>
+  </div>
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
