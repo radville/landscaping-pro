@@ -1,12 +1,11 @@
-<h2>Landscapers Index</h2>
+<h2>Lawn Specialists</h2>
 
 <ul>
-    <h3>Business Name - Zip Code - Available Services</h3>
     <% @landscapers.each do |landscaper| %>
         <li>
-            <%= link_to landscaper.business_name, landscaper_path(landscaper) %> - 
-            <%= landscaper.zip_code %> - 
-            <% landscaper.tasks.each do |task| %>
+            <%= link_to landscaper.business_name, landscaper_path(landscaper) %><br>
+            Zip Code: <%= landscaper.zip_code %><br>
+            Services: <% landscaper.tasks.each do |task| %>
                 <%= task.description %>
             <% end %>
         </li>

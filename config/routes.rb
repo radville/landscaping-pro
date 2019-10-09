@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     confirmations:      "users/confirmations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
-  # resources :users, only: [:index, :show]
+  resources :users, only: [:show]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

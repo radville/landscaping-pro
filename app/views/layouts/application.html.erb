@@ -47,6 +47,12 @@
                 <%= link_to "Find Lawn Specialist", landscapers_path, class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
+                <%= link_to "View Profile", user_path(current_user), class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
                 <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "nav-link js-scroll-trigger" %>
               </li>
             <% elsif landscaper_signed_in? %>
@@ -60,9 +66,9 @@
                 <%= link_to "Sign Out", destroy_landscaper_session_path, :method => :delete, class: "nav-link js-scroll-trigger" %>
               </li>
             <% end %>
-            <li class="nav-item">
+            <%# <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+            </li> %>
           </ul>
         </div>
       </div>
@@ -80,7 +86,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; LandscapingPro 2019</p>
     </div>
     <!-- /.container -->
   </footer>
