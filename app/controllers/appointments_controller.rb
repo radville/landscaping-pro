@@ -1,7 +1,9 @@
 class AppointmentsController < ApplicationController
-    # before_action !current_user 
+    before_action :authenticate_landscaper!, only: [:create, :new]
+
     def new
         @appointment = Appointment.new
+        @landscaper = current_landscaper
     end
 
     def create
@@ -14,11 +16,17 @@ class AppointmentsController < ApplicationController
     end
 
     def index
-        @appointments = Appointment.where(user_id == current_user.id)
+        if user_signed_in?
+            @appointments = Appointment.where(user_id == current_user.id)
+        elsif landscaper_signed_in?
+            @appointments = Appointment.where(user_id == current_landscaper.id)
+        else
+            redirect_to root_url
+        end
     end
 
     def destroy
-        Appointment.find(paramsp[:id]).destroy
+        Appointment.find(params[:id]).destroy
         redirect_to root_url
     end
 

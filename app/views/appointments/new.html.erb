@@ -1,0 +1,36 @@
+<h2>Create new appointment</h2>
+
+<%= form_for @appointment do |f| %>
+  <%= f.hidden_field :landscaper_id, value: @landscaper.id %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :datetime %><br />
+    <%= f.datetime_local_field :datetime %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :frequency %><br />
+    <%= f.text_field :frequency %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Is this appointment recurring?" %><br />
+    <%= f.radio_button :recurring, 'yes', :checked => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Appointment" %>
+  </div>
+<% end %>
+
+<%# <%= render "landscapers/shared/links" %>
