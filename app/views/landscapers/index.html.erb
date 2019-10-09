@@ -5,9 +5,11 @@
         <li>
             <%= link_to landscaper.business_name, landscaper_path(landscaper) %><br>
             Zip Code: <%= landscaper.zip_code %><br>
-            Services: <% landscaper.tasks.each do |task| %>
-                <%= task.description %>
-            <% end %>
-        </li>
+            Description: <%= landscaper.description %><br>
+            <%# Services: <% landscaper.tasks.each do |task| %>
+                <%# <%= task.description %>
+            <%# <% end %>
+            <%= mail_to(landscaper.email, "Contact for Appointment", subject: "Landscaper Pro Appointment Request", body: "Dear #{landscaper.business_name}, \n\nLandscaper Pro recommended you for my lawn care needs. \n\nYou can log in at Landscaper Pro (#{root_url}) to create an appointment with me.") %>
+        </li><br>
     <% end %>
 </ul>
