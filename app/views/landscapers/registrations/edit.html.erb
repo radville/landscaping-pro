@@ -1,8 +1,8 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Edit Profile</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  
+
   <div class="field">
     <%= f.label :business_name %><br />
     <%= f.text_field :business_name, autofocus: true, autocomplete: "business_name" %>

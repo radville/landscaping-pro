@@ -1,3 +1,5 @@
+<h3>Already have a pro account? <%= link_to "Sign in here", new_landscaper_session_path %></h3>
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -46,4 +48,4 @@
   </div>
 <% end %>
 
-<%= render "landscapers/shared/links" %>
+<%# <%= render "landscapers/shared/links" %>

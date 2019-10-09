@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Landscapers::RegistrationsController < Devise::RegistrationsController
+  # skip_before_filter :verify_authenticity_token, :only => :destroy
+
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
@@ -12,7 +14,6 @@ class Landscapers::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    redirect_to landscapers_path
   end
 
   # GET /resource/edit

@@ -16,6 +16,7 @@
     <link href="/assets/stylesheets/scrolling-nav.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
     
   </head>
 
@@ -30,12 +31,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <%= link_to "Find Lawn Specialist", landscapers_path, class: "nav-link js-scroll-trigger" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: "nav-link js-scroll-trigger" %>
-            </li>
+            <% if !landscaper_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign In", new_user_session_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Join as a pro", new_landscaper_registration_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+            <% end %>
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "Find Lawn Specialist", landscapers_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "nav-link js-scroll-trigger" %>
+              </li>
+            <% elsif landscaper_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "View Profile", landscaper_path(current_landscaper), class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Edit Profile", edit_landscaper_registration_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign Out", destroy_landscaper_session_path, :method => :delete, class: "nav-link js-scroll-trigger" %>
+              </li>
+            <% end %>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
