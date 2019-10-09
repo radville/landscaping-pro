@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root to: "application#index"
   
   devise_for :landscapers, controllers: {
+    registrations:      "landscapers/registrations"
+    sessions:           "landscapers/sessions",
+    passwords:          "landscapers/passwords",
+    confirmations:      "landscapers/confirmations",
+    omniauth_callbacks: "landscapers/omniauth_callbacks"
   }
   resources :landscapers, only: [:index, :show]
 
