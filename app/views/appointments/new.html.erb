@@ -4,27 +4,27 @@
   <%= f.hidden_field :landscaper_id, value: @landscaper.id %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.collection_select :user_id, User.all, :id, :name %>
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, User.all, :id, :full_name %>
   </div>
   
   <div class="field">
-    <%= f.label :datetime %><br />
+    <%= f.label :datetime %><br>
     <%= f.datetime_local_field :datetime %>
   </div>
   
   <div class="field">
-    <%= f.label :frequency %><br />
+    <%= f.label :frequency %><br>
     <%= f.text_field :frequency %>
   </div>
   
   <div class="field">
-    <%= f.label "Is this appointment recurring?" %><br />
-    <%= f.radio_button :recurring, 'yes', :checked => true %>
+    <%= f.label "Select if appointment is recurring" %>
+    <%= f.check_box :recurring %>
   </div>
 
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :price %><br>
     <%= f.number_field :price %>
   </div>
 

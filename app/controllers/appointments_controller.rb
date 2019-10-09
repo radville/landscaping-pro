@@ -17,9 +17,9 @@ class AppointmentsController < ApplicationController
 
     def index
         if user_signed_in?
-            @appointments = Appointment.where(user_id == current_user.id)
+            @appointments = Appointment.where("user = current_user")
         elsif landscaper_signed_in?
-            @appointments = Appointment.where(user_id == current_landscaper.id)
+            @appointments = Appointment.where("landscaper = current_landscaper")
         else
             redirect_to root_url
         end
