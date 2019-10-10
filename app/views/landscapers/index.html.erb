@@ -4,11 +4,11 @@
     <% @landscapers.each do |landscaper| %>
         <li>
             <h4><%= landscaper.business_name %></h4>
-            Owner name: <%= landscaper.owner_name %><br>
-            Zip Code: <%= landscaper.zip_code %><br>
-            Description: <%= landscaper.description %><br>
-            <%# Services: <% landscaper.tasks.each do |task| %>
-                <%# <%= task.description %>
+            <p><%= "Owner name: " + landscaper.owner_name if landscaper.owner_name%></p>
+            <p>Zip Code: <%= landscaper.zip_code %></p>
+            <p><%= "Description: " + landscaper.description if landscaper.description%></p>
+            <%# Services: <% landscaper.service.each do |service| %>
+                <%# <%= service.description %>
             <%# <% end %>
             <%= mail_to(landscaper.email, "Request an Appointment", subject: "Landscaper Pro Appointment Request", body: "Dear #{landscaper.business_name}, \n\nLandscaper Pro recommended you for my lawn care needs. \n\nYou can log in at Landscaper Pro (#{root_url}) to create an appointment with me.") %>
         </li><br>
