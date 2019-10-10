@@ -1,9 +1,5 @@
 class LandscapersController < ApplicationController
-    # before_action :authenticate_user!
-
-    def show
-        @landscaper = Landscaper.find(params[:id])
-    end
+    before_action :authenticate_landscaper_or_user!
 
     def index
         @landscapers = Landscaper.all

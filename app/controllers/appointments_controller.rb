@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
     before_action :authenticate_landscaper!, only: [:create, :new]
+    before_action :authenticate_landscaper_or_user!, only: [:index, :destroy]
 
     def new
         @appointment = Appointment.new
