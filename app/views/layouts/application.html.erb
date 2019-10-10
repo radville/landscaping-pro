@@ -60,13 +60,13 @@
               </li>
             <% elsif landscaper_signed_in? %>
               <li class="nav-item">
+                <%= link_to "View Lawn Specialists", landscapers_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
                 <%= link_to "Create Appointment", new_appointment_path, class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
                 <%= link_to "Appointments", appointments_path, class: "nav-link js-scroll-trigger" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "View Profile", landscaper_path(current_landscaper), class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
                 <%= link_to "Edit Profile", edit_landscaper_registration_path, class: "nav-link js-scroll-trigger" %>

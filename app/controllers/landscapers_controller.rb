@@ -1,5 +1,5 @@
 class LandscapersController < ApplicationController
-    before_action :authenticate_landscaper_or_user!
+    before_action :landscaper_or_user_signed_in?
 
     def index
         @landscapers = Landscaper.all
