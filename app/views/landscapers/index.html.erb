@@ -7,9 +7,10 @@
             <p><%= "Owner name: " + landscaper.owner_name if landscaper.owner_name%></p>
             <p>Zip Code: <%= landscaper.zip_code %></p>
             <p><%= "Description: " + landscaper.description if landscaper.description%></p>
-            <%# Services: <% landscaper.service.each do |service| %>
-                <%# <%= service.description %>
-            <%# <% end %>
+            Services: <ul> <% landscaper.services.each do |service| %>
+                <li><%= service.description %></p></li>
+            <% end %>
+            </ul>
             <%= mail_to(landscaper.email, "Request an Appointment", subject: "Landscaper Pro Appointment Request", body: "Dear #{landscaper.business_name}, \n\nLandscaper Pro recommended you for my lawn care needs. \n\nYou can log in at Landscaper Pro (#{root_url}) to create an appointment with me.") %>
         </li><br>
     <% end %>

@@ -26,6 +26,17 @@
   </div>
 
   <div class="field">
+    <%= f.label "Services Available" %><br>
+    <%= f.collection_check_boxes(:service_ids, Service.all, :id, :description) do |box| %>
+      <p><%= box.check_box + " " + box.text %><p>
+    <% end %>
+    New Service: 
+    <%= f.fields_for :services, resource.services.build do |services_fields| %>
+      <%= services_fields.text_field :description %>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>

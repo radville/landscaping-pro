@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
     end
 
     def landscaper_or_user_signed_in?
-        if !user_signed_in? || !landscaper_signed_in?
+        if !current_landscaper 
             flash[:notice] = "Please sign in or sign up"
             redirect_to root_url
         end

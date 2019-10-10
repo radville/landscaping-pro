@@ -8,7 +8,19 @@ class Landscaper < ApplicationRecord
   has_many :landscaper_services
   has_many :services, through: :landscaper_services
 
+  accepts_nested_attributes_for :services
+
   validates :business_name, presence: true
   validates :owner_name, presence: true
   validates :zip_code, presence: true
+
+  def services_attributes=(services_attributes)
+    services_attributes.values.each do |service_attribute|
+      service = Service.find_or_create_by(service_attribute)
+      if service.save
+        self.services << service
+      end
+    end
+  end
+
 end
