@@ -3,7 +3,11 @@
 <ul>
     <% @appointments.each do |appointment| %>
         <li>
-            <%= appointment.datetime %>
+            Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+            Landscaper: <%= appointment.landscaper.business_name %><br>
+            Client: <%= appointment.user.full_name %><br>
+            Price: $<%= appointment.price %><br>
+            Frequency: <%= appointment.frequency %><br>
         </li>
     <% end %>
 </ul>
