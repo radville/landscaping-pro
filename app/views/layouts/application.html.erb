@@ -83,15 +83,17 @@
       </div>
     </nav>
 
-    <% if notice %>
-      <p class="notice"><%= notice if notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-
     <div class="main-content">
+
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+
       <%= yield %>
+      
     </div>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
