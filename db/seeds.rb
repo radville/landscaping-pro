@@ -19,10 +19,10 @@ a3 = Appointment.create!(datetime: DateTime.now, price: 95, landscaper: l2, user
 a4 = Appointment.create!(datetime: DateTime.now, frequency: "monthly", price: 150, landscaper: l3, user: u1)
 a5 = Appointment.create!(datetime: DateTime.now, price: 25, landscaper: l3, user: u3)
 
-t1 = Task.create!(description: "Mowing")
-t2 = Task.create!(description: "Fall Clean Up")
-t3 = Task.create!(description: "Spring Clean Up")
-t4 = Task.create!(description: "Landscaping")
-t5 = Task.create!(description: "Raking")
-t6 = Task.create!(description: "Hedge Trimming")
-l1.tasks << t1
+t1 = Service.create!(description: "Mowing")
+t2 = Service.create!(description: "Fall Clean Up")
+t3 = Service.create!(description: "Spring Clean Up")
+t4 = Service.create!(description: "Landscaping")
+t5 = Service.create!(description: "Raking")
+t6 = Service.create!(description: "Hedge Trimming")
+l1.services << t1

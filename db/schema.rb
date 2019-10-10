@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 2019_10_08_134035) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "landscaper_tasks", force: :cascade do |t|
-    t.integer "task_id", null: false
-    t.integer "landscaper_id", null: false
+  create_table "landscaper_services", force: :cascade do |t|
+    t.integer "service_id"
+    t.integer "landscaper_id"
   end
 
   create_table "landscapers", force: :cascade do |t|
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_10_08_134035) do
     t.index ["reset_password_token"], name: "index_landscapers_on_reset_password_token", unique: true
   end
 
-  create_table "tasks", force: :cascade do |t|
+  create_table "services", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 2019_10_08_134035) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "address_1", null: false
+    t.string "address_1"
     t.string "address_2"
-    t.string "city", null: false
-    t.string "state", null: false
-    t.string "zip_code", null: false
+    t.string "city"
+    t.string "state"
+    t.string "zip_code"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
