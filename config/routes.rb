@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # passwords:          "landscapers/passwords",
     # confirmations:      "landscapers/confirmations",
   }
-  resources :landscapers, only: [:index, :show]
+  resources :landscapers, only: [:index]
 
   devise_for :users, controllers: {
     sessions:           "users/sessions",
