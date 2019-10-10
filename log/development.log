@@ -20616,3 +20616,1689 @@ Processing by Landscapers::SessionsController#new as HTML
 Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.0ms | Allocations: 17919)
 
 
+Started GET "/landscapers/sign_in" for ::1 at 2019-10-10 09:35:54 -0400
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Landscapers::SessionsController#new as HTML
+  Rendering landscapers/sessions/new.html.erb within layouts/application
+  Rendered landscapers/sessions/new.html.erb within layouts/application (Duration: 257.6ms | Allocations: 4019)
+Completed 200 OK in 2821ms (Views: 2743.4ms | ActiveRecord: 29.1ms | Allocations: 1372188)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/landscapers/sign_in" for ::1 at 2019-10-10 09:36:10 -0400
+Processing by Landscapers::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+jx9bfq8YUYTW+kNQi1yhHTvU62mnvTy3cKv2NzoIEHFlClBpL8BGQrcr80TUk6UFnf1U1+gvqcwzMQkxbcCHg==", "landscaper"=>{"email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mLandscaper Load (45.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."email" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 226ms (ActiveRecord: 45.4ms | Allocations: 4575)
+
+
+Started GET "/" for ::1 at 2019-10-10 09:36:10 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 135)
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.4ms | Allocations: 15454)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-10 09:37:21 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 132)
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.5ms | Allocations: 16252)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 09:37:24 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (43.6ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (4.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = current_landscaper)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 31.5ms | Allocations: 2207)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 48.6ms | Allocations: 5569)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "landscaper" does not exist
+LINE 1: ...ELECT "appointments".* FROM "appointments" WHERE (landscaper...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "appointments.landscaper_id".
+):
+    1: <h3>Appointments</h3>
+    2: 
+    3: <ul>
+    4:     <% @appointments.each do |appointment| %>
+    5:         <li>
+    6:             Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+    7:             Landscaper: <%= appointment.landscaper.business_name %><br>
+  
+app/views/appointments/index.html.erb:4
+Started GET "/appointments" for ::1 at 2019-10-10 09:38:44 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (0.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (23.0ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper.id = current_landscaper.id)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 24.0ms | Allocations: 1964)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 85.4ms | Allocations: 11827)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "landscaper"
+LINE 1: ...ELECT "appointments".* FROM "appointments" WHERE (landscaper...
+                                                             ^
+):
+    1: <h3>Appointments</h3>
+    2: 
+    3: <ul>
+    4:     <% @appointments.each do |appointment| %>
+    5:         <li>
+    6:             Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+    7:             Landscaper: <%= appointment.landscaper.business_name %><br>
+  
+app/views/appointments/index.html.erb:4
+Started GET "/appointments" for ::1 at 2019-10-10 09:39:58 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  [1m[36mAppointment Load (42.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = current_landscaper)[0m
+  ↳ app/controllers/appointments_controller.rb:22:in `index'
+  [1m[36mAppointment Load (1.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = current_landscaper) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/appointments_controller.rb:22:in `index'
+  [1m[36mAppointment Load (2.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments"[0m
+  ↳ app/controllers/appointments_controller.rb:22:in `index'
+Started GET "/landscapers/sign_in" for ::1 at 2019-10-10 09:40:33 -0400
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (1.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = current_landscaper)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1953)
+Completed 500 Internal Server Error in 39007ms (ActiveRecord: 59.7ms | Allocations: 46948)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "landscaper" does not exist
+LINE 1: ...ELECT "appointments".* FROM "appointments" WHERE (landscaper...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "appointments.landscaper_id".
+):
+    1: <h3>Appointments</h3>
+    2: 
+    3: <ul>
+    4:     <% @appointments.each do |appointment| %>
+    5:         <li>
+    6:             Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+    7:             Landscaper: <%= appointment.landscaper.business_name %><br>
+  
+app/views/appointments/index.html.erb:4
+Started GET "/landscapers" for ::1 at 2019-10-10 09:40:38 -0400
+Processing by Landscapers::SessionsController#new as HTML
+Processing by LandscapersController#index as HTML
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 77ms (ActiveRecord: 60.2ms | Allocations: 12919)
+
+
+  [1m[36mLandscaper Load (124.6ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 174.1ms | Allocations: 12855)
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 204ms (Views: 77.2ms | ActiveRecord: 125.3ms | Allocations: 28526)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/landscapers" for ::1 at 2019-10-10 09:41:20 -0400
+Processing by LandscapersController#index as HTML
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3098)
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.9ms | Allocations: 19662)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments/new" for ::1 at 2019-10-10 09:41:23 -0400
+Processing by AppointmentsController#new as HTML
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb within layouts/application (Duration: 127.0ms | Allocations: 12274)
+Completed 200 OK in 215ms (Views: 139.2ms | ActiveRecord: 63.7ms | Allocations: 34621)
+
+
+Started POST "/appointments" for ::1 at 2019-10-10 09:41:40 -0400
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"JBxY/er0zmYk3hOWFC174YPk+TGoO0iuVaAUlRmcGYcCCwkczXUTW9a/2RkKmFn2BXmc9I7EyT8uOKv7WjS1gQ==", "appointment"=>{"landscaper_id"=>"4", "user_id"=>"1", "datetime"=>"2019-01-01T01:00", "frequency"=>"weekly", "recurring"=>"0", "price"=>"50"}, "commit"=>"Create Appointment"}
+  [1m[36mLandscaper Load (0.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/appointments_controller.rb:11:in `create'
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:11:in `create'
+  [1m[36mAppointment Create (8.4ms)[0m  [1m[32mINSERT INTO "appointments" ("landscaper_id", "user_id", "datetime", "frequency", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["landscaper_id", 4], ["user_id", 1], ["datetime", "2019-01-01 01:00:00"], ["frequency", "weekly"], ["price", 50], ["created_at", "2019-10-10 13:41:41.069133"], ["updated_at", "2019-10-10 13:41:41.069133"]]
+  ↳ app/controllers/appointments_controller.rb:11:in `create'
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/appointments_controller.rb:11:in `create'
+Redirected to http://localhost:3000/appointments
+Completed 302 Found in 129ms (ActiveRecord: 13.2ms | Allocations: 9097)
+
+
+Started GET "/appointments" for ::1 at 2019-10-10 09:41:41 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (2.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = current_landscaper)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2159)
+Completed 500 Internal Server Error in 7322ms (ActiveRecord: 2.6ms | Allocations: 13328)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "landscaper" does not exist
+LINE 1: ...ELECT "appointments".* FROM "appointments" WHERE (landscaper...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "appointments.landscaper_id".
+):
+    1: <h3>Appointments</h3>
+    2: 
+    3: <ul>
+    4:     <% @appointments.each do |appointment| %>
+    5:         <li>
+    6:             Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+    7:             Landscaper: <%= appointment.landscaper.business_name %><br>
+  
+app/views/appointments/index.html.erb:4
+Started GET "/appointments" for ::1 at 2019-10-10 09:42:53 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  [1m[36mAppointment Load (1.0ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments"[0m
+  ↳ (pry):3:in `map'
+  [1m[36mLandscaper Load (4.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ (pry):4:in `block in index'
+  [1m[36mCACHE Landscaper Load (0.1ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ (pry):4:in `block in index'
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" ORDER BY "appointments"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ (pry):6:in `index'
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ (pry):7:in `index'
+  [1m[36mAppointment Load (41.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper.id = current_landscaper.id)[0m
+  ↳ app/controllers/appointments_controller.rb:22:in `index'
+  [1m[36mAppointment Load (0.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper.id = current_landscaper.id) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/appointments_controller.rb:22:in `index'
+  [1m[36mAppointment Load (1.9ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper.id = current_landscaper.id)[0m
+  ↳ (pry):9:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):12:in `index'
+  [1m[36mAppointment Load (2.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = current_landscaper)[0m
+  ↳ (pry):16:in `index'
+  [1m[36mAppointment Load (2.0ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper_id = current_landscaper.id)[0m
+  ↳ (pry):18:in `index'
+  [1m[36mAppointment Load (2.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper_id = current_landscaper.id)[0m
+  ↳ app/controllers/appointments_controller.rb:22:in `index'
+  [1m[36mAppointment Load (1.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper_id = current_landscaper.id) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/appointments_controller.rb:22:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (40.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = current_landscaper)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 1942)
+Completed 500 Internal Server Error in 260146ms (ActiveRecord: 99.8ms | Allocations: 299270)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "landscaper" does not exist
+LINE 1: ...ELECT "appointments".* FROM "appointments" WHERE (landscaper...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "appointments.landscaper_id".
+):
+    1: <h3>Appointments</h3>
+    2: 
+    3: <ul>
+    4:     <% @appointments.each do |appointment| %>
+    5:         <li>
+    6:             Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+    7:             Landscaper: <%= appointment.landscaper.business_name %><br>
+  
+app/views/appointments/index.html.erb:4
+Started GET "/appointments" for ::1 at 2019-10-10 09:47:16 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (0.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (1.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper_id = current_landscaper.id)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1943)
+Completed 500 Internal Server Error in 3703ms (ActiveRecord: 56.3ms | Allocations: 21124)
+
+
+  
+ActionView::Template::Error (PG::UndefinedTable: ERROR:  missing FROM-clause entry for table "current_landscaper"
+LINE 1: ...nts".* FROM "appointments" WHERE (landscaper_id = current_la...
+                                                             ^
+):
+    1: <h3>Appointments</h3>
+    2: 
+    3: <ul>
+    4:     <% @appointments.each do |appointment| %>
+    5:         <li>
+    6:             Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+    7:             Landscaper: <%= appointment.landscaper.business_name %><br>
+  
+app/views/appointments/index.html.erb:4
+Started GET "/appointments" for ::1 at 2019-10-10 10:24:47 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (46.8ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (44.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper = 4)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 47.0ms | Allocations: 1964)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 92.2ms | Allocations: 11509)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "landscaper" does not exist
+LINE 1: ...ELECT "appointments".* FROM "appointments" WHERE (landscaper...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "appointments.landscaper_id".
+):
+    1: <h3>Appointments</h3>
+    2: 
+    3: <ul>
+    4:     <% @appointments.each do |appointment| %>
+    5:         <li>
+    6:             Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+    7:             Landscaper: <%= appointment.landscaper.business_name %><br>
+  
+app/views/appointments/index.html.erb:4
+Started GET "/appointments" for ::1 at 2019-10-10 10:31:02 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (44.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (43.9ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper_id = 4)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 115.1ms | Allocations: 19207)
+Completed 200 OK in 233ms (Views: 102.7ms | ActiveRecord: 114.1ms | Allocations: 42107)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments/new" for ::1 at 2019-10-10 10:39:50 -0400
+Processing by AppointmentsController#new as HTML
+  [1m[36mLandscaper Load (2.9ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mUser Load (42.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb within layouts/application (Duration: 65.3ms | Allocations: 10636)
+Completed 200 OK in 315ms (Views: 82.3ms | ActiveRecord: 46.2ms | Allocations: 39818)
+
+
+Started GET "/appointments" for ::1 at 2019-10-10 10:39:52 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mLandscaper Load (35.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:21:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (9.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (landscaper_id = 4)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.8ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 24.1ms | Allocations: 4788)
+Completed 200 OK in 81ms (Views: 30.1ms | ActiveRecord: 45.5ms | Allocations: 19765)
+
+
+Started GET "/landscapers/4" for ::1 at 2019-10-10 10:39:54 -0400
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 25.5ms | Allocations: 185)
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 0.9ms | Allocations: 16121)
+
+
+Started GET "/landscapers/edit" for ::1 at 2019-10-10 10:39:56 -0400
+Processing by Landscapers::RegistrationsController#edit as HTML
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering landscapers/registrations/edit.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 3.2ms | Allocations: 212)
+  Rendered landscapers/registrations/edit.html.erb within layouts/application (Duration: 47.2ms | Allocations: 3499)
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 0.4ms | Allocations: 20639)
+
+
+Started PUT "/landscapers" for ::1 at 2019-10-10 10:40:05 -0400
+Processing by Landscapers::RegistrationsController#update as HTML
+  Parameters: {"authenticity_token"=>"h5LlrBWKVZrtLFVGuPxrRtJTiXH4F780j3k/yvf02omLZLc7vnLN/whjNpu2S4usCoNA8sweKbfw6W80C7bW5g==", "landscaper"=>{"business_name"=>"Happy Mowers", "owner_name"=>"Laura Radville", "description"=>"", "zip_code"=>"", "email"=>"laura.radville@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mLandscaper Load (0.8ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLandscaper Load (0.8ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLandscaper Update (31.2ms)[0m  [1m[33mUPDATE "landscapers" SET "business_name" = $1, "owner_name" = $2, "description" = $3, "zip_code" = $4, "updated_at" = $5 WHERE "landscapers"."id" = $6[0m  [["business_name", "Happy Mowers"], ["owner_name", "Laura Radville"], ["description", ""], ["zip_code", ""], ["updated_at", "2019-10-10 14:40:06.130935"], ["id", 4]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 189ms (ActiveRecord: 35.4ms | Allocations: 10551)
+
+
+Started GET "/" for ::1 at 2019-10-10 10:40:06 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 131)
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.4ms | Allocations: 15441)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/landscapers/4" for ::1 at 2019-10-10 10:40:08 -0400
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mLandscaper Load (29.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLandscaper Load (0.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 55ms (Views: 22.3ms | ActiveRecord: 29.8ms | Allocations: 15603)
+
+
+Started DELETE "/landscapers/sign_out" for ::1 at 2019-10-10 10:40:18 -0400
+Processing by Landscapers::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QMjHrCbtcRYAlqWu49tFMpqTzeDmIFF0q2EVLhFNIUEH/aJtgWH12zjoLltJxpe21MFGud81FtqczCpcJnKWiQ=="}
+  [1m[36mLandscaper Load (2.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 279ms (ActiveRecord: 2.2ms | Allocations: 2806)
+
+
+Started GET "/" for ::1 at 2019-10-10 10:40:19 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 14157)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2019-10-10 10:40:21 -0400
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1299)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.0ms | Allocations: 16807)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-10 10:40:25 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Sll6M1fHVZIj88zZ0LPUuZxtTCgjYmF0BQuN13pOwQ7ZrdlMBbWAFncKK93s4Nn/VpLVE++LEaifQ0p9/2gT2Q==", "user"=>{"email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 124ms (ActiveRecord: 0.4ms | Allocations: 4465)
+
+
+Started GET "/" for ::1 at 2019-10-10 10:40:25 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.4ms | Allocations: 14906)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-10-10 10:43:10 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 131)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 107ms (Views: 105.3ms | ActiveRecord: 0.6ms | Allocations: 16216)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:43:12 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (40.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (42.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (2.9ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 56.3ms | Allocations: 3653)
+Completed 200 OK in 120ms (Views: 29.1ms | ActiveRecord: 86.5ms | Allocations: 19361)
+
+
+Started GET "/appointments" for ::1 at 2019-10-10 10:44:18 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 3404)
+Completed 200 OK in 2204ms (Views: 2197.4ms | ActiveRecord: 2.4ms | Allocations: 1318925)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:44:36 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (45.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (2.0ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (2.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 3443)
+Completed 200 OK in 3507ms (Views: 3451.8ms | ActiveRecord: 50.3ms | Allocations: 1317826)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:46:09 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 3614)
+Completed 200 OK in 1624ms (Views: 1615.6ms | ActiveRecord: 3.2ms | Allocations: 1318625)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:46:21 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3404)
+Completed 200 OK in 1695ms (Views: 1686.9ms | ActiveRecord: 4.2ms | Allocations: 1317644)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:46:44 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3404)
+Completed 200 OK in 1537ms (Views: 1531.3ms | ActiveRecord: 2.2ms | Allocations: 1317635)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:47:39 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (2.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.1ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 3404)
+Completed 200 OK in 1585ms (Views: 1577.0ms | ActiveRecord: 4.4ms | Allocations: 1316815)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:47:52 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3404)
+Completed 200 OK in 1539ms (Views: 1533.2ms | ActiveRecord: 1.7ms | Allocations: 1317642)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:48:17 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (1.0ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.6ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3404)
+Completed 200 OK in 1540ms (Views: 1534.0ms | ActiveRecord: 2.7ms | Allocations: 1316811)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:48:31 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3404)
+Completed 200 OK in 3835ms (Views: 3828.7ms | ActiveRecord: 2.4ms | Allocations: 1317695)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/appointments" for ::1 at 2019-10-10 10:48:42 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (1.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.6ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3404)
+Completed 200 OK in 104ms (Views: 96.3ms | ActiveRecord: 3.3ms | Allocations: 18404)
+
+
+Started GET "/appointments" for ::1 at 2019-10-10 10:48:43 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:19:in `index'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  [1m[36mCACHE Landscaper Load (0.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:8
+  Rendered appointments/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 3404)
+Completed 200 OK in 54ms (Views: 47.7ms | ActiveRecord: 2.3ms | Allocations: 18318)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/landscapers" for ::1 at 2019-10-10 10:48:45 -0400
+Processing by LandscapersController#index as HTML
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (14.9ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 24.5ms | Allocations: 3105)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 54ms (Views: 36.4ms | ActiveRecord: 15.3ms | Allocations: 18679)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-10 10:48:52 -0400
+Processing by LandscapersController#index as HTML
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2848)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 1271ms (Views: 1269.1ms | ActiveRecord: 1.1ms | Allocations: 1317069)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/landscapers" for ::1 at 2019-10-10 10:48:57 -0400
+Processing by LandscapersController#index as HTML
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2847)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 1411ms (Views: 1408.3ms | ActiveRecord: 1.2ms | Allocations: 1317467)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/landscapers" for ::1 at 2019-10-10 10:49:01 -0400
+Processing by LandscapersController#index as HTML
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (9.1ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 2847)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 1542ms (Views: 1531.6ms | ActiveRecord: 9.6ms | Allocations: 1317532)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/landscapers" for ::1 at 2019-10-10 10:49:07 -0400
+Processing by LandscapersController#index as HTML
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.9ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2847)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 1436ms (Views: 1432.8ms | ActiveRecord: 1.6ms | Allocations: 1317098)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/scrolling-nav.css"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.0) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.0) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/landscapers/5" for ::1 at 2019-10-10 10:49:39 -0400
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mLandscaper Load (3.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 167)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 63ms (Views: 55.3ms | ActiveRecord: 3.7ms | Allocations: 15820)
+
+
+Started GET "/landscapers/1" for ::1 at 2019-10-10 10:50:46 -0400
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLandscaper Load (1.1ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 19)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 1.5ms | Allocations: 15483)
+
+
+Started GET "/landscapers/1" for ::1 at 2019-10-10 10:50:59 -0400
+Processing by LandscapersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLandscaper Load (1.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:5:in `show'
+  Rendering landscapers/show.html.erb within layouts/application
+  Rendered landscapers/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 98ms (Views: 90.9ms | ActiveRecord: 1.8ms | Allocations: 15490)
+
+

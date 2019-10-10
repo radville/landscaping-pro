@@ -47,6 +47,9 @@
                 <%= link_to "Find Lawn Specialist", landscapers_path, class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
+                <%= link_to "Appointments", appointments_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
                 <%= link_to "View Profile", user_path(current_user), class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
@@ -56,6 +59,12 @@
                 <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "nav-link js-scroll-trigger" %>
               </li>
             <% elsif landscaper_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "Create Appointment", new_appointment_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Appointments", appointments_path, class: "nav-link js-scroll-trigger" %>
+              </li>
               <li class="nav-item">
                 <%= link_to "View Profile", landscaper_path(current_landscaper), class: "nav-link js-scroll-trigger" %>
               </li>
@@ -81,25 +90,26 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
-    <%= yield %>
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; LandscapingPro 2019</p>
+    <div class="main-content">
+      <%= yield %>
     </div>
-    <!-- /.container -->
-  </footer>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; LandscapingPro 2019</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/jquery/jquery.min.js"></script>
-  <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/jquery/jquery.min.js"></script>
+    <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom JavaScript for this theme -->
-  <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/js/scrolling-nav.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/js/scrolling-nav.js"></script>
 
   </body>
 </html>

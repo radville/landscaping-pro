@@ -11,3 +11,11 @@
 section {
   padding: 150px 0;
 }
+
+.navbar-nav .nav-item {
+  padding: 0px .5vw 0px;
+}
+
+.main-content {
+  padding: 0 7vw 0;
+}
