@@ -12,6 +12,9 @@ Rails.application.routes.draw do
      resources :appointments, only: [:new, :create, :index, :destroy]
   end
 
+  get 'landscapers/service' => "landscapers#index"
+  post 'landscapers/service' => "landscapers#index"
+
   devise_for :users, controllers: {
     sessions:           "users/sessions",
     registrations:      "users/registrations",

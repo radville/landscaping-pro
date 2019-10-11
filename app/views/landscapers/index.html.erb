@@ -1,4 +1,12 @@
 <h2>Lawn Specialists</h2>
+<br>
+<h4>Filter by available services</h4>
+    <%= form_for :landscaper, controller: "landscapers_controller", url: landscapers_service_path, action: :post do |f| %>
+        <%= f.collection_select(:service_ids, Service.all, :id, :description) %>
+        <%= f.submit "Filter" %>
+    <% end %><br>
+
+<button><%= link_to "See all landscapers", landscapers_path %></button><br><br>
 
 <ul>
     <% @landscapers.each do |landscaper| %>
@@ -7,10 +15,11 @@
             <p><%= "Owner name: " + landscaper.owner_name if landscaper.owner_name%></p>
             <p>Zip Code: <%= landscaper.zip_code %></p>
             <p><%= "Description: " + landscaper.description if landscaper.description%></p>
-            Services: <ul> <% landscaper.services.each do |service| %>
-                <li><%= service.description %></p></li>
-            <% end %>
-            </ul>
+            <strong><%= "Services: " unless landscaper.services.empty? %></strong>
+                <ul> <% landscaper.services.each do |service| %>
+                    <li><%= service.description %></p></li>
+                <% end %>
+                </ul>
             <%= mail_to(landscaper.email, "Request an Appointment", subject: "Landscaper Pro Appointment Request", body: "Dear #{landscaper.business_name}, \n\nLandscaper Pro recommended you for my lawn care needs. \n\nYou can log in at Landscaper Pro (#{root_url}) to create an appointment with me.") %>
         </li><br>
     <% end %>
