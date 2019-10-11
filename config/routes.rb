@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'landscapers/service' => "landscapers#index"
   post 'landscapers/service' => "landscapers#index"
+  get 'landscapers/sort' => "landscapers#index"
+  post 'landscapers/sort' => "landscapers#index"
 
   devise_for :users, controllers: {
     sessions:           "users/sessions",

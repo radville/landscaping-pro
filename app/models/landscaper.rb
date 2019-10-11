@@ -14,6 +14,9 @@ class Landscaper < ApplicationRecord
   validates :owner_name, presence: true
   validates :zip_code, presence: true
 
+  scope :alphabetical, -> { order(:business_name)}
+  scope :reverse_alphabetical, -> { order(business_name: :desc)}
+
   def services_attributes=(services_attributes)
     services_attributes.values.each do |service_attribute|
       service = Service.find_or_create_by(service_attribute)

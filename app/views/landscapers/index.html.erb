@@ -8,6 +8,14 @@
 
 <button><%= link_to "See all landscapers", landscapers_path %></button><br><br>
 
+<%= form_for :landscaper, controller: "landscapers_controller", url: landscapers_sort_path, action: :post do |f| %>
+        <%= f.submit "Sort A-Z" %>
+<% end %>
+
+<%= form_for :landscaper, controller: "landscapers_controller", url: landscapers_sort_path, action: :post do |f| %>
+        <%= f.submit "Sort Z-A" %>
+<% end %><br>
+
 <ul>
     <% @landscapers.each do |landscaper| %>
         <li>
