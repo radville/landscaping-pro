@@ -33633,3 +33633,228 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 121ms (Views: 118.3ms | ActiveRecord: 0.6ms | Allocations: 15327)
 
 
+Started GET "/" for ::1 at 2019-10-11 09:19:25 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 45.6ms | Allocations: 214)
+  [1m[36mUser Load (28.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 6842ms (Views: 6655.6ms | ActiveRecord: 48.8ms | Allocations: 2746345)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-10-11 09:19:35 -0400
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ecfakgOf2C+Osv7DKZ60KA2YZWN35kz49rQf5fsYbl7pWU8QNOYnNdrPCqghPzMto7k8Fq+XOmXqKie4exhIMg=="}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 214ms (ActiveRecord: 2.6ms | Allocations: 5009)
+
+
+Started GET "/" for ::1 at 2019-10-11 09:19:35 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.0ms | Allocations: 17749)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:19:39 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 214)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 354.0ms | Allocations: 4644)
+Completed 200 OK in 390ms (Views: 388.6ms | ActiveRecord: 0.0ms | Allocations: 24019)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:20:27 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 2.5ms | Allocations: 204)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 33.5ms | Allocations: 3482)
+Completed 200 OK in 127ms (Views: 125.5ms | ActiveRecord: 0.0ms | Allocations: 23657)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:21:50 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 204)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 54.4ms | Allocations: 3498)
+Completed 200 OK in 5415ms (Views: 5411.4ms | ActiveRecord: 0.0ms | Allocations: 1368815)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:22:01 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2399)
+Completed 200 OK in 2441ms (Views: 2440.2ms | ActiveRecord: 0.0ms | Allocations: 1329684)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:23:12 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2392)
+Completed 200 OK in 4452ms (Views: 4450.9ms | ActiveRecord: 0.0ms | Allocations: 1332547)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:23:40 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 2392)
+Completed 200 OK in 10267ms (Views: 10262.0ms | ActiveRecord: 0.0ms | Allocations: 1331649)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:24:00 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2393)
+Completed 200 OK in 5067ms (Views: 5065.2ms | ActiveRecord: 0.0ms | Allocations: 1333026)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:24:26 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2392)
+Completed 200 OK in 2487ms (Views: 2485.6ms | ActiveRecord: 0.0ms | Allocations: 1331636)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:25:04 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 2392)
+Completed 200 OK in 2547ms (Views: 2545.0ms | ActiveRecord: 0.0ms | Allocations: 1332487)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:25:18 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2392)
+Completed 200 OK in 3166ms (Views: 3164.7ms | ActiveRecord: 0.0ms | Allocations: 1332098)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:25:28 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2392)
+Completed 200 OK in 2264ms (Views: 2262.6ms | ActiveRecord: 0.0ms | Allocations: 1331613)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:26:23 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2392)
+Completed 200 OK in 5389ms (Views: 5386.2ms | ActiveRecord: 0.0ms | Allocations: 1332532)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:26:38 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2392)
+Completed 200 OK in 9518ms (Views: 9512.9ms | ActiveRecord: 0.0ms | Allocations: 1332544)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:26:53 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2392)
+Completed 200 OK in 4337ms (Views: 4334.3ms | ActiveRecord: 0.0ms | Allocations: 1332999)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:27:14 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2392)
+Completed 200 OK in 3657ms (Views: 3652.6ms | ActiveRecord: 0.0ms | Allocations: 1332537)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:27:58 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2392)
+Completed 200 OK in 5136ms (Views: 5134.2ms | ActiveRecord: 0.0ms | Allocations: 1332119)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:28:31 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2392)
+Completed 200 OK in 4019ms (Views: 4017.3ms | ActiveRecord: 0.0ms | Allocations: 1332994)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:28:46 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 24.8ms | Allocations: 2392)
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:28:49 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 2399)
+Completed 200 OK in 14770ms (Views: 14766.9ms | ActiveRecord: 0.0ms | Allocations: 2515480)
+
+
+Completed 200 OK in 12028ms (Views: 12021.7ms | ActiveRecord: 0.0ms | Allocations: 2214142)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:29:12 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 22.6ms | Allocations: 2392)
+Completed 200 OK in 7076ms (Views: 7073.7ms | ActiveRecord: 0.0ms | Allocations: 1332071)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:31:42 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2392)
+Completed 200 OK in 4309ms (Views: 4306.9ms | ActiveRecord: 0.0ms | Allocations: 1332972)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:31:55 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2392)
+Completed 200 OK in 3929ms (Views: 3925.6ms | ActiveRecord: 0.0ms | Allocations: 1332014)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:32:03 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2392)
+Completed 200 OK in 3457ms (Views: 3455.1ms | ActiveRecord: 0.0ms | Allocations: 1332518)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:32:17 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 2392)
+Completed 200 OK in 3717ms (Views: 3714.7ms | ActiveRecord: 0.0ms | Allocations: 1332098)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:32:31 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 15)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 2392)
+Completed 200 OK in 3791ms (Views: 3788.2ms | ActiveRecord: 0.0ms | Allocations: 1332523)
+
+

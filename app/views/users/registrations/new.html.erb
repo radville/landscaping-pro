@@ -1,5 +1,14 @@
 <h2>Sign up</h2>
 
+<div class="login-buttons">
+  <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook" do %>
+    <span class="fa fa-facebook"></span> Sign in with Facebook
+  <% end %>
+  <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google" do %>
+    <span class="fa fa-google"></span> Sign in with Google
+  <% end %>
+</div>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
