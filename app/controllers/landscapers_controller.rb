@@ -3,11 +3,10 @@ class LandscapersController < ApplicationController
 
     def index
         if params[:landscaper]
-            @landscapers = Landscaper.all.select do |landscaper|
-                # binding.pry
-                landscaper.service_ids.include?(params[:landscaper][:service_ids].to_i)
-            end
-            # @landscapers = Landscaper.where("service_ids: params[:landscaper][:service_ids]")
+            # @landscapers = Landscaper.all.select do |landscaper|
+            #     landscaper.service_ids.include?(params[:landscaper][:service_ids].to_i)
+            # end
+            @landscapers = Landscaper.joins(:landscaper_services).where(landscaper_services: {service_id: params[:landscaper][:service_ids]})
         else
             @landscapers = Landscaper.all
         end
