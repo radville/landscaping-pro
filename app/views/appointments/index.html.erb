@@ -1,7 +1,9 @@
 <h3>Appointments</h3>
 
 <ul>
-    <% if @appointments %>
+    <% if @appointments.empty? %>
+        <p>You have no scheduled appointments</p>
+    <% else %>
         <% @appointments.each do |appointment| %>
             <li>
                 Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
@@ -11,7 +13,5 @@
                 Frequency: <%= appointment.frequency %><br>
             </li>
         <% end %>
-    <% else %>
-        <p>You have no scheduled appointments</p>
     <% end %>
 </ul>

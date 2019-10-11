@@ -47,7 +47,7 @@
                 <%= link_to "Find Lawn Specialist", landscapers_path, class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
-                <%= link_to "Appointments", appointments_path, class: "nav-link js-scroll-trigger" %>
+                <%= link_to "Appointments", user_appointments_path(current_user), class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
                 <%= link_to "View Profile", user_path(current_user), class: "nav-link js-scroll-trigger" %>
@@ -66,7 +66,7 @@
                 <%= link_to "Create Appointment", new_appointment_path, class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
-                <%= link_to "Appointments", appointments_path, class: "nav-link js-scroll-trigger" %>
+                <%= link_to "Appointments", landscaper_appointments_path(current_landscaper), class: "nav-link js-scroll-trigger" %>
               </li>
               <li class="nav-item">
                 <%= link_to "Edit Profile", edit_landscaper_registration_path, class: "nav-link js-scroll-trigger" %>

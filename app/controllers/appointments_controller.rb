@@ -18,9 +18,19 @@ class AppointmentsController < ApplicationController
 
     def index
         if params[:user_id]
-            @appointments = User.find(params[:user_id]).appointments
+            if params[:user_id] == current_user.id.to_s
+                @appointments = User.find(params[:user_id]).appointments
+            else
+                flash[:notice] = "Invalid URL for current user."
+                redirect_to user_appointments_path(current_user)
+            end
         elsif params[:landscaper_id]
-            @appointments = Landscaper.find(params[:landscaper_id].appointments)
+            if params[:landscaper_id] == current_landscaper.id.to_s
+                @appointments = Landscaper.find(params[:landscaper_id].appointments)
+            else
+                flash[:notice] = "Invalid URL for current user."
+                redirect_to landscaper_appointments_path(current_landscaper)
+            end
         end
     end
 
