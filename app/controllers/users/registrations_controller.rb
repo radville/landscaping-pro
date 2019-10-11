@@ -4,6 +4,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
+  # Overwrite update_resource to let users to update their user without giving their password
+  def update_resource(resource, params)
+    if signed_in_with_google
+      params.delete("current_password")
+      resource.update_without_password(params)
+    else
+      resource.update_with_password(params)
+    end
+  end
+
+
   # GET /resource/sign_up
   # def new
   #   super

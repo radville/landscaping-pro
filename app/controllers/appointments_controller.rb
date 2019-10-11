@@ -17,13 +17,10 @@ class AppointmentsController < ApplicationController
     end
 
     def index
-        if user_signed_in?
-            @appointments = Appointment.where("user_id = ?", current_user.id)
-        elsif landscaper_signed_in?
-            # binding.pry
-            @appointments = Appointment.where("landscaper_id = ?", current_landscaper.id)
-        else
-            redirect_to root_url
+        if params[:user_id]
+            @appointments = User.find(params[:user_id]).appointments
+        elsif params[:landscaper_id]
+            @appointments = Landscaper.find(params[:landscaper_id].appointments)
         end
     end
 

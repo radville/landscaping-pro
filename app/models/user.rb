@@ -10,10 +10,6 @@ class User < ApplicationRecord
   
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :address_1, presence: true
-  validates :city, presence: true
-  validates :state, presence: true
-  validates :zip_code, presence: true
 
   def full_name
     self.first_name + " " + self.last_name

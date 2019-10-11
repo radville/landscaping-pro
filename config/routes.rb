@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     # passwords:          "landscapers/passwords",
     # confirmations:      "landscapers/confirmations",
   }
-  resources :landscapers, only: [:index]
+  resources :landscapers, only: [:index] do
+     #nested resource for appointments
+     resources :appointments, only: [:new, :create, :index, :destroy]
+  end
 
   devise_for :users, controllers: {
     sessions:           "users/sessions",
@@ -16,7 +19,10 @@ Rails.application.routes.draw do
     # confirmations:      "users/confirmations",
     # passwords:          "users/passwords",
   }
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    #nested resource for appointments
+    resources :appointments, only: [:index, :destroy]
+  end
 
   resources :appointments, only: [:new, :create, :index, :destroy]
 

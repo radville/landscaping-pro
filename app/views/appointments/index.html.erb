@@ -1,13 +1,17 @@
 <h3>Appointments</h3>
 
 <ul>
-    <% @appointments.each do |appointment| %>
-        <li>
-            Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
-            Landscaper: <%= appointment.landscaper.business_name %><br>
-            Client: <%= appointment.user.full_name %><br>
-            Price: $<%= appointment.price %><br>
-            Frequency: <%= appointment.frequency %><br>
-        </li>
+    <% if @appointments %>
+        <% @appointments.each do |appointment| %>
+            <li>
+                Date and time: <%= appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br>
+                Landscaper: <%= appointment.landscaper.business_name %><br>
+                Client: <%= appointment.user.full_name %><br>
+                Price: $<%= appointment.price %><br>
+                Frequency: <%= appointment.frequency %><br>
+            </li>
+        <% end %>
+    <% else %>
+        <p>You have no scheduled appointments</p>
     <% end %>
 </ul>
