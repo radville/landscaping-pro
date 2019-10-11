@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    helper_method :signed_in_with_google
+
     def index
     end
 

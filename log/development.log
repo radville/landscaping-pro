@@ -35177,3 +35177,43 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 57ms (Views: 31.3ms | ActiveRecord: 18.3ms | Allocations: 21910)
 
 
+Started GET "/users/edit" for ::1 at 2019-10-11 12:11:10 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (43.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 214)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 1186.5ms | Allocations: 464442)
+Completed 500 Internal Server Error in 1762ms (ActiveRecord: 330.2ms | Allocations: 480566)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `signed_in_with_google' for #<#<Class:0x00007fa46126af18>:0x00007fa461268ee8>):
+    42:     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    43:   </div>
+    44: 
+    45:   <% if !signed_in_with_google %>
+    46:     <div class="field">
+    47:       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    48:       <%= f.password_field :password, autocomplete: "new-password" %>
+  
+app/views/users/registrations/edit.html.erb:45
+app/views/users/registrations/edit.html.erb:3
+Started GET "/users/edit" for ::1 at 2019-10-11 12:12:01 -0400
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2308)
+Completed 200 OK in 1644ms (Views: 1613.5ms | ActiveRecord: 5.5ms | Allocations: 1381530)
+
+
+Started GET "/users/edit" for ::1 at 2019-10-11 12:12:08 -0400
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (37.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/registrations/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2209)
+Completed 200 OK in 74ms (Views: 28.4ms | ActiveRecord: 40.0ms | Allocations: 23527)
+
+
