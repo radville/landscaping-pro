@@ -33472,3 +33472,164 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 1464ms (Views: 1347.6ms | ActiveRecord: 0.7ms | Allocations: 1360156)
 
 
+Started GET "/" for ::1 at 2019-10-11 09:02:50 -0400
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 43.8ms | Allocations: 327)
+  [1m[36mUser Load (35.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 2727ms (Views: 2543.9ms | ActiveRecord: 58.1ms | Allocations: 1371699)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-11 09:02:57 -0400
+Started GET "/users/auth/facebook" for ::1 at 2019-10-11 09:03:00 -0400
+Started GET "/users/auth/facebook/callback?code=AQAXV8mwmrJNSgqc8Lpd8Z04es_irXVcCcms2hDErSKDIe5R-64sYF22e5Y9BbttOU5mFsGGdA9wqhqz4gcl3Wb1t-WRyq7QGVjNK5XPyVAbbjxjyJIdqu6pK1mJ5yD4UIbNgo9tECZXo66OacpHCZzpFljAsOsZqhBWBKBV9X-372LdvNPYwDOUC-VhAxUIH1_ueVoBAOAyy1KT96wsfC0pJbzIBgGcVX7GvKEtLBjcm5PH5qPVNMBB3EiJ_BUvhMhMKnbt5FsbUd3Zk2-GWCmE6vSMB4_5Fm-Ir9ZC8MkxEB4UqtMSs6LBnvpKtHYbRro&state=0174130ab8a02bf8f6e1e5c19838bbc05faef5a24f32714f" for ::1 at 2019-10-11 09:03:02 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAXV8mwmrJNSgqc8Lpd8Z04es_irXVcCcms2hDErSKDIe5R-64sYF22e5Y9BbttOU5mFsGGdA9wqhqz4gcl3Wb1t-WRyq7QGVjNK5XPyVAbbjxjyJIdqu6pK1mJ5yD4UIbNgo9tECZXo66OacpHCZzpFljAsOsZqhBWBKBV9X-372LdvNPYwDOUC-VhAxUIH1_ueVoBAOAyy1KT96wsfC0pJbzIBgGcVX7GvKEtLBjcm5PH5qPVNMBB3EiJ_BUvhMhMKnbt5FsbUd3Zk2-GWCmE6vSMB4_5Fm-Ir9ZC8MkxEB4UqtMSs6LBnvpKtHYbRro", "state"=>"0174130ab8a02bf8f6e1e5c19838bbc05faef5a24f32714f"}
+  [1m[36mUser Load (19.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10100564544824601"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33:in `from_omniauth'
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:33:in `from_omniauth'
+  [1m[36mUser Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33:in `from_omniauth'
+  [1m[35m (45.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:33:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 70686ms (ActiveRecord: 72.1ms | Allocations: 46886)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:04:15 -0400
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 92ms (ActiveRecord: 57.7ms | Allocations: 12710)
+
+
+Started GET "/" for ::1 at 2019-10-11 09:04:15 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 56)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 103ms (Views: 97.4ms | ActiveRecord: 1.1ms | Allocations: 15217)
+
+
+Started GET "/" for ::1 at 2019-10-11 09:05:07 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 85.5ms | Allocations: 169)
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 189ms (Views: 182.1ms | ActiveRecord: 4.6ms | Allocations: 16365)
+
+
+Started GET "/" for ::1 at 2019-10-11 09:05:22 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 204)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.9ms | Allocations: 16394)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-10-11 09:05:24 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-10-11 09:05:26 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-10-11 09:06:31 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-10-11 09:06:31 -0400
+Started GET "/users/auth/google_oauth2/callback?state=968eb270ac94263bd0434a133f1098adb1723df2aa470fdd&code=4%2FsAGl2d_io5dWJsQ2egwVi-8ZgnY9xbrhA_8OZF2n6_Zk3Qjz7ByGAURl3VCv3vdrvNiUm0EuR0p90MblnnsfmSw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=aa9f069f77d50a2a642cb820b65ba7db43dcbca8..161c&prompt=consent" for ::1 at 2019-10-11 09:06:41 -0400
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"968eb270ac94263bd0434a133f1098adb1723df2aa470fdd", "code"=>"4/sAGl2d_io5dWJsQ2egwVi-8ZgnY9xbrhA_8OZF2n6_Zk3Qjz7ByGAURl3VCv3vdrvNiUm0EuR0p90MblnnsfmSw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"aa9f069f77d50a2a642cb820b65ba7db43dcbca8..161c", "prompt"=>"consent"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "106629710522731419647"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 241ms (ActiveRecord: 2.4ms | Allocations: 6771)
+
+
+  
+ActionDispatch::Cookies::CookieOverflow (ActionDispatch::Cookies::CookieOverflow):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:637:in `commit'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:474:in `[]='
+actionpack (6.0.0) lib/action_dispatch/middleware/session/cookie_store.rb:101:in `set_cookie'
+rack (2.0.7) lib/rack/session/abstract/id.rb:363:in `commit_session'
+rack (2.0.7) lib/rack/session/abstract/id.rb:234:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-10-11 09:10:55 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-10-11 09:10:55 -0400
+Started GET "/users/auth/google_oauth2/callback?state=c4987f5087db7e0cb4237deca0618942e0bfd28ed5ee484b&code=4%2FsAGtxVWGNMkeBs8TE-yMwHXHbOkhNs-ygzPxnCzhsxNHEjCrUcmJxSDl0auZFKdTAjC1NWeEa6V2JiDv8NCr5i8&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&session_state=20d6d283d555ab33f4ef73b60a2ccf8d9f6fe117..9515&prompt=consent" for ::1 at 2019-10-11 09:11:04 -0400
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"c4987f5087db7e0cb4237deca0618942e0bfd28ed5ee484b", "code"=>"4/sAGtxVWGNMkeBs8TE-yMwHXHbOkhNs-ygzPxnCzhsxNHEjCrUcmJxSDl0auZFKdTAjC1NWeEa6V2JiDv8NCr5i8", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "session_state"=>"20d6d283d555ab33f4ef73b60a2ccf8d9f6fe117..9515", "prompt"=>"consent"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "106629710522731419647"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 290ms (ActiveRecord: 17.5ms | Allocations: 17115)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-11 09:11:07 -0400
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms | Allocations: 2376)
+
+
+Started GET "/" for ::1 at 2019-10-11 09:11:07 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 79)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 121ms (Views: 118.3ms | ActiveRecord: 0.6ms | Allocations: 15327)
+
+
