@@ -33190,3 +33190,285 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 14190)
 
 
+Started GET "/users/sign_in" for ::1 at 2019-10-10 21:20:52 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 327.5ms | Allocations: 4018)
+Completed 200 OK in 2207ms (Views: 2093.1ms | ActiveRecord: 48.8ms | Allocations: 1375697)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-10-10 21:20:58 -0400
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"2Lx99E8Ty1nM4a/OnH8BxnV15a2MMnUUYmIsHxp0ECLIDCwI65YPyVh1IhzKb5o9AkCaIDyyeFPwONMLLV3YAg==", "user"=>{"email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (43.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 53ms (ActiveRecord: 43.8ms | Allocations: 2706)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"2Lx99E8Ty1nM4a/OnH8BxnV15a2MMnUUYmIsHxp0ECLIDCwI65YPyVh1IhzKb5o9AkCaIDyyeFPwONMLLV3YAg==", "user"=>{"email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 848)
+Completed 200 OK in 137ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 15069)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-10 21:21:05 -0400
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 213)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3668)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 19152)
+
+
+Started POST "/users" for ::1 at 2019-10-10 21:21:33 -0400
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"JddUHXNsRnylKBd8WGpIdhff81Owg7p2Eo9jJ4BbZyICvJQv9rbRRN9e1KYn251rOqloZBKo9DEsuunsuxYbeg==", "user"=>{"first_name"=>"Laura", "last_name"=>"Radville", "address_1"=>"Carolyn Drive", "address_2"=>"", "city"=>"FC", "state"=>"VA", "zip_code"=>"01985", "email"=>"LAURA.RADVILLE@GMAIL.COM", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "address_1", "address_2", "city", "state", "zip_code", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["first_name", "Laura"], ["last_name", "Radville"], ["address_1", "Carolyn Drive"], ["address_2", ""], ["city", "FC"], ["state", "VA"], ["zip_code", "01985"], ["email", "laura.radville@gmail.com"], ["encrypted_password", "$2a$11$eTwiFTq.CQHcEfypS2zwsOHfOBH80UBR.2LmXbpKh9eMeZ9ISRzG."], ["created_at", "2019-10-11 01:21:33.166200"], ["updated_at", "2019-10-11 01:21:33.166200"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 160ms (ActiveRecord: 5.2ms | Allocations: 12389)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:21:33 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 189)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 67ms (Views: 65.8ms | ActiveRecord: 0.3ms | Allocations: 15501)
+
+
+Started GET "/users/1" for ::1 at 2019-10-10 21:21:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 43.4ms | Allocations: 226)
+Completed 200 OK in 63ms (Views: 58.8ms | ActiveRecord: 0.7ms | Allocations: 17132)
+
+
+Started GET "/appointments" for ::1 at 2019-10-10 21:21:40 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `landscaper_or_user_signed_in?'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (42.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 48.3ms | Allocations: 1334)
+Completed 200 OK in 119ms (Views: 18.7ms | ActiveRecord: 45.3ms | Allocations: 18242)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-10 21:21:42 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `landscaper_or_user_signed_in?'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mLandscaper Load (3.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:4
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1515)
+Completed 200 OK in 27ms (Views: 19.1ms | ActiveRecord: 5.6ms | Allocations: 17271)
+
+
+Started GET "/appointments" for ::1 at 2019-10-10 21:21:52 -0400
+Processing by AppointmentsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `landscaper_or_user_signed_in?'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (user_id = 1)[0m
+  ↳ app/views/appointments/index.html.erb:4
+  Rendered appointments/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 611)
+Completed 200 OK in 23ms (Views: 17.4ms | ActiveRecord: 2.0ms | Allocations: 15661)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:27:05 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 55)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 90ms (Views: 82.4ms | ActiveRecord: 7.1ms | Allocations: 25452)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:27:06 -0400
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 404 Not Found in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms | Allocations: 861)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:27:08 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 48)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.3ms | Allocations: 14965)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:27:47 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 48)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.4ms | Allocations: 14966)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:27:48 -0400
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 404 Not Found in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 546)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:27:49 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 48)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 2.4ms | Allocations: 15062)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:28:07 -0400
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 404 Not Found in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 542)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:28:08 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 48)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.6ms | Allocations: 14957)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:29:05 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:29:05 -0400
+Started GET "/users/auth/facebook/callback?code=AQB41xyW2T7-3n_qUXup-fRdKT-3fPJv58TsQN72R1M9ckOtuhiuPOpVMhFP4Gddmn8-HtHsONOlqRoXFR37G5LCIpjkbQG9ttB7zCezC6bWVIP5xflyGzRVd_VkNK6gZqirY6BgaD5zqjTm6A40RlZ-HzZr-VDpcO2zPd-i6jfqJJk3LBt9BMSJjtWmX0H_5esJJIQEjAIWfGM4DfxOJvC-4TfQiHmq6BXQ1PQwtwwe9yi-0-Qggk5-QungNltlVZ2xcuWWP3vrorOLNIwm0t9mMq7gASvv3N9wg41FhWBp9hAIXaeopebl8jQTS6o06u4&state=cea99f3f07be3d3f6df7176e8b3b7161960a15ce96da4310" for ::1 at 2019-10-10 21:29:20 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB41xyW2T7-3n_qUXup-fRdKT-3fPJv58TsQN72R1M9ckOtuhiuPOpVMhFP4Gddmn8-HtHsONOlqRoXFR37G5LCIpjkbQG9ttB7zCezC6bWVIP5xflyGzRVd_VkNK6gZqirY6BgaD5zqjTm6A40RlZ-HzZr-VDpcO2zPd-i6jfqJJk3LBt9BMSJjtWmX0H_5esJJIQEjAIWfGM4DfxOJvC-4TfQiHmq6BXQ1PQwtwwe9yi-0-Qggk5-QungNltlVZ2xcuWWP3vrorOLNIwm0t9mMq7gASvv3N9wg41FhWBp9hAIXaeopebl8jQTS6o06u4", "state"=>"cea99f3f07be3d3f6df7176e8b3b7161960a15ce96da4310"}
+  [1m[36mUser Load (26.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10100564544824601"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 317ms (ActiveRecord: 60.6ms | Allocations: 20423)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-10 21:29:21 -0400
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 2304)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:29:21 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 314)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 2092ms (Views: 1991.9ms | ActiveRecord: 0.5ms | Allocations: 1360165)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:30:49 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 3)
+Completed 404 Not Found in 94ms (Views: 90.0ms | ActiveRecord: 0.0ms | Allocations: 1451)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:30:51 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 323)
+  [1m[36mUser Load (45.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 1696ms (Views: 1508.4ms | ActiveRecord: 95.3ms | Allocations: 1371194)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:30:53 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.4ms | Allocations: 15022)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:31:58 -0400
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 327)
+  [1m[36mUser Load (26.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 2054ms (Views: 1859.2ms | ActiveRecord: 62.2ms | Allocations: 1371711)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:32:02 -0400
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 2)
+Completed 404 Not Found in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms | Allocations: 925)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:32:03 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 50)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.4ms | Allocations: 15042)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:33:14 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/facebook" for ::1 at 2019-10-10 21:33:14 -0400
+Started GET "/users/auth/facebook/callback?code=AQCKfeTMNHxNizZBeJDvkddGZ37Dq_C7bHmcsQeAIrLTCNHte2W9MKT6Q5k8g5tJX9KyzdtuOAujXoDpVab3Mq6v4wSa7sAz8if4axpRic5p4ofDcX3KsI_DuAdhyOuw_NYHRSfO-fc9D3hyqOoOBrv1QSzcU_6k_XE9MHQNFyu7W9GZn7sWzPFbPRZ9WMEtrLZhiDsC8dnKQNOVzXLY-N7NlrkShU8xkP1m-ulXyvOrhQxl9L7WoNyfVfSiVr4Sv89P-IaAXbk_l3CsouVPxw6tC7GXRMTKXT06WxH77ztHyCFPu2vnrkx0rw9iq17e5UQ&state=e830d8f6c80e711e48ef32509ff717a3f7829de89acf18c8" for ::1 at 2019-10-10 21:33:14 -0400
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCKfeTMNHxNizZBeJDvkddGZ37Dq_C7bHmcsQeAIrLTCNHte2W9MKT6Q5k8g5tJX9KyzdtuOAujXoDpVab3Mq6v4wSa7sAz8if4axpRic5p4ofDcX3KsI_DuAdhyOuw_NYHRSfO-fc9D3hyqOoOBrv1QSzcU_6k_XE9MHQNFyu7W9GZn7sWzPFbPRZ9WMEtrLZhiDsC8dnKQNOVzXLY-N7NlrkShU8xkP1m-ulXyvOrhQxl9L7WoNyfVfSiVr4Sv89P-IaAXbk_l3CsouVPxw6tC7GXRMTKXT06WxH77ztHyCFPu2vnrkx0rw9iq17e5UQ", "state"=>"e830d8f6c80e711e48ef32509ff717a3f7829de89acf18c8"}
+  [1m[36mUser Load (46.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10100564544824601"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "laura.radville@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31:in `from_omniauth'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/models/user.rb:31:in `from_omniauth'
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 401ms (ActiveRecord: 96.5ms | Allocations: 20411)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-10-10 21:33:15 -0400
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 2304)
+
+
+Started GET "/" for ::1 at 2019-10-10 21:33:15 -0400
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 314)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 1464ms (Views: 1347.6ms | ActiveRecord: 0.7ms | Allocations: 1360156)
+
+
