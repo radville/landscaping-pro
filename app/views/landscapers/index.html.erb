@@ -2,7 +2,7 @@
 <br>
 
 <div class="button-container">
-    <%= button_to "All landscapers", landscapers_path, class: "button" %>
+    <%= button_to "All landscapers", landscapers_path, method: :get, class: "button" %>
 
     <%= form_for :landscaper, controller: "landscapers_controller", url: landscapers_sort_path, action: :post, html: {class: "button"} do |f| %>
             <%= f.submit "Sort A-Z" %>
