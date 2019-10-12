@@ -23,3 +23,8 @@ section {
 #mainNav {
   margin-bottom: 0px;
 }
+
+img.logo {
+  height: 3vw;
+  margin: .5vw;
+}
