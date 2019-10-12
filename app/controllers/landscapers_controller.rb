@@ -3,10 +3,7 @@ class LandscapersController < ApplicationController
 
     def index
         if params[:landscaper]
-            # @landscapers = Landscaper.all.select do |landscaper|
-            #     landscaper.service_ids.include?(params[:landscaper][:service_ids].to_i)
-            # end
-            @landscapers = Landscaper.joins(:landscaper_services).where(landscaper_services: {service_id: params[:landscaper][:service_ids]})
+            @landscapers = Service.find(params[:landscaper][:service_ids]).landscapers
         elsif params[:commit] == "Sort A-Z"
             @landscapers = Landscaper.alphabetical
         elsif params[:commit] == "Sort Z-A"
@@ -15,8 +12,4 @@ class LandscapersController < ApplicationController
             @landscapers = Landscaper.all
         end
     end
-
-    # def service 
-
-    # end
 end
