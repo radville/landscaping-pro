@@ -42,7 +42,8 @@ class AppointmentsController < ApplicationController
 
     def destroy
         Appointment.find(params[:id]).destroy
-        redirect_to root_url
+        redirect_to landscaper_appointments_path(current_landscaper) if landscaper_signed_in?
+        redirect_to user_appointments_path(current_user) if user_signed_in?
     end
 
     private
