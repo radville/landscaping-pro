@@ -14,7 +14,7 @@ Specs:
 - [x] Include logout (how e.g. Devise) - Devise used
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth) - Devise and Omniauth used for google login
 - [x] Include nested resource show or index (URL e.g. users/2/recipes) - users/1/appointments
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new) - landscapers/1/appointments/new
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:

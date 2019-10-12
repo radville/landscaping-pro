@@ -45452,3 +45452,270 @@ Processing by AppointmentsController#show as HTML
 Completed 200 OK in 41ms (Views: 35.0ms | ActiveRecord: 1.8ms | Allocations: 25922)
 
 
+Started GET "/landscapers/4/appointments/6" for ::1 at 2019-10-12 15:24:23 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#show as HTML
+  Parameters: {"landscaper_id"=>"4", "id"=>"6"}
+  [1m[36mAppointment Load (43.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:40:in `show'
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mLandscaper Load (41.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:4
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:6
+  Rendered appointments/show.html.erb within layouts/application (Duration: 162.2ms | Allocations: 22322)
+  [1m[36mLandscaper Load (0.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 500 Internal Server Error in 3364ms (ActiveRecord: 152.7ms | Allocations: 1616362)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_landscaper_appointment' for #<#<Class:0x00007fe1045dd968>:0x00007fe1045f3290>
+Did you mean?  new_landscaper_appointment_url
+               new_landscaper_appointment_path):
+    63:                 <%= link_to "View Lawn Specialists", landscapers_path, class: "nav-link js-scroll-trigger" %>
+    64:               </li>
+    65:               <li class="nav-item">
+    66:                 <%= link_to "Create Appointment", new_landscaper_appointment, class: "nav-link js-scroll-trigger" %>
+    67:               </li>
+    68:               <li class="nav-item">
+    69:                 <%= link_to "Appointments", landscaper_appointments_path(current_landscaper), class: "nav-link js-scroll-trigger" %>
+  
+app/views/layouts/application.html.erb:66
+Started GET "/landscapers/4/appointments/6" for ::1 at 2019-10-12 15:24:39 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"landscaper_id"=>"4", "id"=>"6"}
+  [1m[36mAppointment Load (1.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:40:in `show'
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mLandscaper Load (2.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:6
+  Rendered appointments/show.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1704)
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 54ms (Views: 46.5ms | ActiveRecord: 4.2ms | Allocations: 26010)
+
+
+Started GET "/landscapers/4/appointments/new" for ::1 at 2019-10-12 15:24:41 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"landscaper_id"=>"4"}
+  [1m[36mLandscaper Load (25.1ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mUser Load (27.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb within layouts/application (Duration: 330.5ms | Allocations: 5321)
+Completed 200 OK in 466ms (Views: 333.6ms | ActiveRecord: 52.6ms | Allocations: 32557)
+
+
+Started POST "/appointments" for ::1 at 2019-10-12 15:24:53 -0400
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"DVQlq5pMarVrnhHPsrWkYWoh7Q4IwBoUakcGGmTsReSIzlkau3CoVR7dPBx6uQ6f1lKe8Kn5mfhYYChryQjvPQ==", "appointment"=>{"landscaper_id"=>"4", "user_id"=>"2", "datetime"=>"2019-10-28T12:30", "frequency"=>"", "recurring"=>"0", "price"=>"100"}, "commit"=>"Create Appointment"}
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/appointments_controller.rb:12:in `create'
+  [1m[36mLandscaper Load (0.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:12:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:12:in `create'
+  [1m[36mAppointment Create (41.9ms)[0m  [1m[32mINSERT INTO "appointments" ("landscaper_id", "user_id", "datetime", "frequency", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["landscaper_id", 4], ["user_id", 2], ["datetime", "2019-10-28 12:30:00"], ["frequency", ""], ["price", 100], ["created_at", "2019-10-12 19:24:53.991159"], ["updated_at", "2019-10-12 19:24:53.991159"]]
+  ↳ app/controllers/appointments_controller.rb:12:in `create'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/appointments_controller.rb:12:in `create'
+Redirected to http://localhost:3000/landscapers/4/appointments
+Completed 302 Found in 62ms (ActiveRecord: 45.9ms | Allocations: 6928)
+
+
+Started GET "/landscapers/4/appointments" for ::1 at 2019-10-12 15:24:54 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"landscaper_id"=>"4"}
+  [1m[36mLandscaper Load (1.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (40.0ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/appointments/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (Duration: 8.8ms | Allocations: 5361)
+  Rendered appointments/index.html.erb within layouts/application (Duration: 66.3ms | Allocations: 14191)
+Completed 200 OK in 125ms (Views: 75.6ms | ActiveRecord: 41.7ms | Allocations: 37325)
+
+
+Started GET "/landscapers/4/appointments" for ::1 at 2019-10-12 15:26:02 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"landscaper_id"=>"4"}
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/appointments/index.html.erb:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (Duration: 22.1ms | Allocations: 11342)
+  Rendered appointments/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 13113)
+Completed 200 OK in 115ms (Views: 109.2ms | ActiveRecord: 1.7ms | Allocations: 36766)
+
+
+Started GET "/landscapers/4/appointments" for ::1 at 2019-10-12 15:27:26 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"landscaper_id"=>"4"}
+  [1m[36mLandscaper Load (43.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/appointments/index.html.erb:3
+  [1m[36mUser Load (43.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (Duration: 62.7ms | Allocations: 11415)
+  Rendered appointments/index.html.erb within layouts/application (Duration: 68.2ms | Allocations: 13214)
+Completed 200 OK in 204ms (Views: 110.9ms | ActiveRecord: 88.0ms | Allocations: 36963)
+
+
+Started GET "/landscapers/4/appointments" for ::1 at 2019-10-12 15:27:44 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"landscaper_id"=>"4"}
+  [1m[36mLandscaper Load (1.2ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/appointments/index.html.erb:3
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (Duration: 18.2ms | Allocations: 11414)
+  Rendered appointments/index.html.erb within layouts/application (Duration: 23.7ms | Allocations: 13212)
+Completed 200 OK in 69ms (Views: 59.7ms | ActiveRecord: 3.3ms | Allocations: 36944)
+
+
+Started GET "/landscapers/4/appointments/new" for ::1 at 2019-10-12 15:28:06 -0400
+Processing by AppointmentsController#new as HTML
+  Parameters: {"landscaper_id"=>"4"}
+  [1m[36mLandscaper Load (21.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering appointments/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2435)
+Completed 200 OK in 57ms (Views: 28.7ms | ActiveRecord: 21.8ms | Allocations: 25164)
+
+
+Started GET "/landscapers/4/appointments" for ::1 at 2019-10-12 15:28:39 -0400
+Processing by AppointmentsController#index as HTML
+  Parameters: {"landscaper_id"=>"4"}
+  [1m[36mLandscaper Load (0.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/appointments/index.html.erb:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/index.html.erb:11
+  Rendered /Users/Laura/.rvm/gems/ruby-2.6.1/gems/simple_calendar-2.3.0/app/views/simple_calendar/_month_calendar.html.erb (Duration: 18.1ms | Allocations: 10975)
+  Rendered appointments/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 12171)
+Completed 200 OK in 49ms (Views: 43.9ms | ActiveRecord: 1.5ms | Allocations: 34123)
+
+
+Started GET "/landscapers/4/appointments/6" for ::1 at 2019-10-12 15:28:40 -0400
+Processing by AppointmentsController#show as HTML
+  Parameters: {"landscaper_id"=>"4", "id"=>"6"}
+  [1m[36mAppointment Load (32.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:40:in `show'
+  Rendering appointments/show.html.erb within layouts/application
+  [1m[36mLandscaper Load (0.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/show.html.erb:6
+  Rendered appointments/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1702)
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:34
+Completed 200 OK in 78ms (Views: 39.7ms | ActiveRecord: 34.6ms | Allocations: 24421)
+
+
