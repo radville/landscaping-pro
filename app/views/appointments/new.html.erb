@@ -25,12 +25,10 @@
 
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.number_field :price %>
+    $<%= f.number_field :price %>
   </div>
 
   <div class="actions">
     <%= f.submit "Create Appointment" %>
   </div>
 <% end %>
-
-<%# <%= render "landscapers/shared/links" %>

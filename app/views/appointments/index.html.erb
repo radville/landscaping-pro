@@ -1,7 +1,7 @@
 <h3>Appointments</h3>
 
 <ul>
-    <% if @appointments.empty? %>
+    <% if @appointments == [] || @appointments.nil? %>
         <p>You have no scheduled appointments</p>
     <% else %>
         <% @appointments.each do |appointment| %>
@@ -15,3 +15,15 @@
         <% end %>
     <% end %>
 </ul>
+
+<%= month_calendar events: @appointments do |date, appointments| %>
+  <%= date.day %>
+
+  <% appointments.each do |appointment| %>
+    <div>
+      <strong><%= appointment.datetime.strftime("%l:%M %p") %></strong><br>
+      <%= link_to appointment.user.full_name, landscaper_appointment_path(current_landscaper, appointment) if landscaper_signed_in? %>
+      <%= link_to appointment.landscaper.business_name, user_appointment_path(current_user, appointment) if user_signed_in? %>
+    </div>
+  <% end %>
+<% end %>

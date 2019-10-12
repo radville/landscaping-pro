@@ -42,7 +42,7 @@ class Landscapers::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    raise params.inspect
+    binding.pry
     devise_parameter_sanitizer.permit(:sign_up, keys: [:business_name, :owner_name, :description, :zip_code, service_ids:[], services_attributes: [:description]])
   end
 

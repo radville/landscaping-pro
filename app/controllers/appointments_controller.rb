@@ -10,28 +10,34 @@ class AppointmentsController < ApplicationController
     def create
         appointment = Appointment.new(appointment_params)
         if appointment.save
-            redirect_to appointments_path
+            redirect_to landscaper_appointments_path(current_landscaper) if landscaper_signed_in?
+            redirect_to user_appointments_path(current_user) if user_signed_in?
         else
-            redirect_to appointments_new_path
+            flash[:notice] = "Appointment not saved"
+            redirect_to new_appointment_path
         end
     end
 
     def index
         if params[:user_id]
             if params[:user_id] == current_user.id.to_s
-                @appointments = User.find(params[:user_id]).appointments
+                @appointments = current_user.appointments
             else
                 flash[:notice] = "Invalid URL for current user."
                 redirect_to user_appointments_path(current_user)
             end
         elsif params[:landscaper_id]
             if params[:landscaper_id] == current_landscaper.id.to_s
-                @appointments = Landscaper.find(params[:landscaper_id].appointments)
+                @appointments = current_landscaper.appointments
             else
                 flash[:notice] = "Invalid URL for current user."
                 redirect_to landscaper_appointments_path(current_landscaper)
             end
         end
+    end
+
+    def show
+        @appointment = Appointment.find(params[:id])
     end
 
     def destroy

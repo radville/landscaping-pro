@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   }
   resources :landscapers, only: [:index] do
      #nested resource for appointments
-     resources :appointments, only: [:new, :create, :index, :destroy]
+     resources :appointments, only: [:new, :create, :index, :show, :destroy]
   end
 
   get 'landscapers/service' => "landscapers#index"
@@ -26,10 +26,10 @@ Rails.application.routes.draw do
   }
   resources :users, only: [:show] do
     #nested resource for appointments
-    resources :appointments, only: [:index, :destroy]
+    resources :appointments, only: [:index, :show, :destroy]
   end
 
-  resources :appointments, only: [:new, :create, :index, :destroy]
+  resources :appointments, only: [:new, :create, :index, :show, :destroy]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

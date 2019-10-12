@@ -3,11 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 gem 'pry'
+# To log in with Omniauth
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+
+gem "simple_calendar", "~> 2.0"
 gem 'devise'
 gem 'bootstrap-sass'
 # For omniauth login buttons

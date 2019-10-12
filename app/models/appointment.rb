@@ -6,4 +6,9 @@ class Appointment < ApplicationRecord
     validates :landscaper_id, presence: true
     validates :user_id, presence: true
     validates :price, presence: true
+
+    def start_time
+        self.datetime
+    end
+
 end

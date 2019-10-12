@@ -1,0 +1,9 @@
+<h3>Appointment Details</h3>
+
+<strong>Date and time: </strong><%= @appointment.datetime.strftime("%A, %b. %d, %Y, %l:%M %p") %><br><br>
+<strong>Landscaper: </strong><%= @appointment.landscaper.business_name %><br>
+<strong>Landscaper Contact: </strong><%= @appointment.landscaper.email %><br><br>
+<strong>Client: </strong><%= @appointment.user.full_name %><br>
+<strong>Client Contact: </strong><%= @appointment.user.email %><br><br>
+<strong>Price: </strong>$<%= @appointment.price %><br>
+<strong>Frequency:</strong> <%= @appointment.frequency %><br><br>
