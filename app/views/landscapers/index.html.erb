@@ -14,23 +14,28 @@
 </div>
 
     <h4>Filter by available services</h4>
-        <%= form_for :landscaper, controller: "landscapers_controller", url: landscapers_service_path, action: :post do |f| %>
-            <%= f.collection_select(:service_ids, Service.all, :id, :description) %>
-            <%= f.submit "Filter" %>
-        <% end %><br>
-<ul>
+    <%= form_for :landscaper, controller: "landscapers_controller", url: landscapers_service_path, action: :post do |f| %>
+        <%= f.collection_select(:service_ids, Service.all, :id, :description) %>
+        <%= f.submit "Filter" %>
+    <% end %><br>
+    
+<div class="grid-container">
     <% @landscapers.each do |landscaper| %>
-        <li>
+        <div class="grid-item">
             <h4><%= landscaper.business_name %></h4>
-            <p><%= "Owner name: " + landscaper.owner_name if landscaper.owner_name%></p>
-            <p>Zip Code: <%= landscaper.zip_code %></p>
-            <p><%= "Description: " + landscaper.description if landscaper.description%></p>
+            <% if landscaper.owner_name %>
+                <p><strong>Owner name: </strong><%= landscaper.owner_name %></p>
+            <% end %>
+            <p><strong>Zip Code: </strong><%= landscaper.zip_code %></p>
+            <% if landscaper.description %>
+                <p><strong>Description: </strong><%= landscaper.description %></p>
+            <% end %>
             <strong><%= "Services: " unless landscaper.services.empty? %></strong>
                 <ul> <% landscaper.services.each do |service| %>
                     <li><%= service.description %></p></li>
                 <% end %>
                 </ul>
             <%= mail_to(landscaper.email, "Request an Appointment", subject: "Landscaper Pro Appointment Request", body: "Dear #{landscaper.business_name}, \n\nLandscaper Pro recommended you for my lawn care needs. \n\nYou can log in at Landscaper Pro (#{root_url}) to create an appointment with me.") %>
-        </li><br>
+        </div>
     <% end %>
-</ul>
+</div>

@@ -5,3 +5,20 @@
 .button {
     margin: 0 .5vw 0;
 }
+
+/* formatting to display landscapers */
+.grid-container {
+    height: auto;
+    width: 90vw;
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    margin: 1vw;
+  }
+
+  .grid-item {
+    background-color: #ecf9ec;
+    border: 1px solid black;
+    padding: 1%;
+    box-shadow: 1px 2px 1px #ccc; 
+  }
