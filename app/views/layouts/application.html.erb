@@ -32,17 +32,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <% if !user_signed_in? && !landscaper_signed_in? %>
-              <li class="nav-item">
-                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link js-scroll-trigger" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Sign In", new_user_session_path, class: "nav-link js-scroll-trigger" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Join as a pro", new_landscaper_registration_path, class: "nav-link js-scroll-trigger" %>
-              </li>
-            <% end %>
             <% if user_signed_in? %>
               <li class="nav-item">
                 <%= link_to "Find Lawn Specialist", landscapers_path, class: "nav-link js-scroll-trigger" %>
@@ -74,6 +63,16 @@
               </li>
               <li class="nav-item">
                 <%= link_to "Sign Out", destroy_landscaper_session_path, :method => :delete, class: "nav-link js-scroll-trigger" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign In", new_user_session_path, class: "nav-link js-scroll-trigger" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Join as a pro", new_landscaper_registration_path, class: "nav-link js-scroll-trigger" %>
               </li>
             <% end %>
           </ul>

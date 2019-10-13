@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
     before_action :authenticate_landscaper!, only: [:create, :new]
-    before_action :landscaper_or_user_signed_in?, only: [:index, :destroy]
+    before_action :landscaper_or_user_signed_in?, only: [:index, :destroy, :show]
 
     def new
         @appointment = Appointment.new
@@ -37,7 +37,15 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-        @appointment = Appointment.find(params[:id])
+        if current_landscaper && current_landscaper.appointment_ids.include?(params[:id])
+            @appointment = Appointment.find(params[:id])
+        elsif current_user && current_user.appointment_ids.include?(params[:id])
+            @appointment = Appointment.find(params[:id])
+        else
+            flash[:notice] = "Appointment does not exist."
+            redirect_to landscaper_appointments_path(current_landscaper) if current_landscaper
+            redirect_to user_appointments_path(current_user) if current_user
+        end
     end
 
     def destroy
