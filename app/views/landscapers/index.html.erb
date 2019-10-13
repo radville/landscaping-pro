@@ -15,7 +15,7 @@
 
     <h4>Filter by available services</h4>
     <%= form_for :landscaper, controller: "landscapers_controller", url: landscapers_service_path, action: :post do |f| %>
-        <%= f.collection_select(:service_ids, Service.all, :id, :description) %>
+        <%= f.collection_select(:service_ids, Service.all.sort_by{|s| s.description}, :id, :description) %>
         <%= f.submit "Filter" %>
     <% end %><br>
     

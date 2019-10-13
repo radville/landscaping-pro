@@ -25,7 +25,7 @@
 
   <div class="field">
     <%= f.label "Services Available" %><br>
-    <%= f.collection_check_boxes(:service_ids, Service.all, :id, :description) do |box| %>
+    <%= f.collection_check_boxes(:service_ids, Service.all.sort_by{|s| s.description}, :id, :description) do |box| %>
       <p><%= box.check_box + " " + box.text %><p>
     <% end %>
     New Service: 
