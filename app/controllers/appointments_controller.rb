@@ -37,9 +37,9 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-        if current_landscaper && current_landscaper.appointment_ids.include?(params[:id])
+        if current_landscaper && current_landscaper.appointment_ids.include?(params[:id].to_i)
             @appointment = Appointment.find(params[:id])
-        elsif current_user && current_user.appointment_ids.include?(params[:id])
+        elsif current_user && current_user.appointment_ids.include?(params[:id].to_i)
             @appointment = Appointment.find(params[:id])
         else
             flash[:notice] = "Appointment does not exist."
