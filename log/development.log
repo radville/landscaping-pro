@@ -46544,3 +46544,205 @@ Processing by ApplicationController#index as HTML
 Completed 200 OK in 64ms (Views: 61.9ms | ActiveRecord: 0.5ms | Allocations: 24604)
 
 
+Started GET "/" for ::1 at 2019-10-12 15:57:05 -0400
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (Duration: 42.5ms | Allocations: 211)
+  [1m[36mLandscaper Load (33.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:35
+Completed 200 OK in 2138ms (Views: 1924.4ms | ActiveRecord: 82.2ms | Allocations: 1398051)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-12 15:57:16 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mLandscaper Load (1.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mService Load (43.1ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/landscapers/index.html.erb:18
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:23
+  [1m[36mService Exists? (42.6ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 1], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 2], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.6ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 2]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 3], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 3]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 4], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (6.9ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/landscapers/index.html.erb:34
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 391.7ms | Allocations: 19536)
+Completed 200 OK in 545ms (Views: 425.4ms | ActiveRecord: 113.5ms | Allocations: 43693)
+
+
+Started POST "/landscapers/service" for ::1 at 2019-10-12 15:57:26 -0400
+Processing by LandscapersController#index as HTML
+  Parameters: {"authenticity_token"=>"m23Hov0EVqmjg212I7Yw/70qzqI6U6bpGdEjVoc5MFx9AoLtsQe/MOOOBLkqEifSYfV3QO4BY029A9HK9/7I/A==", "landscaper"=>{"service_ids"=>"5"}, "commit"=>"Filter"}
+  [1m[36mLandscaper Load (0.4ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:6:in `index'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/landscapers/index.html.erb:18
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" INNER JOIN "landscaper_services" ON "landscapers"."id" = "landscaper_services"."landscaper_id" WHERE "landscaper_services"."service_id" = $1[0m  [["service_id", 5]]
+  ↳ app/views/landscapers/index.html.erb:23
+  [1m[36mService Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 4], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/landscapers/index.html.erb:34
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5050)
+Completed 200 OK in 44ms (Views: 36.1ms | ActiveRecord: 2.4ms | Allocations: 29428)
+
+
+Started GET "/landscapers" for ::1 at 2019-10-12 15:57:31 -0400
+Processing by LandscapersController#index as HTML
+  [1m[36mLandscaper Load (0.6ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/landscapers/index.html.erb:18
+  [1m[36mLandscaper Load (0.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers"[0m
+  ↳ app/views/landscapers/index.html.erb:23
+  [1m[36mService Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 1], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 2], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 2]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 3], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 3]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 4], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/landscapers/index.html.erb:34
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 25.0ms | Allocations: 9608)
+Completed 200 OK in 58ms (Views: 48.6ms | ActiveRecord: 5.8ms | Allocations: 32912)
+
+
+Started POST "/landscapers/sort" for ::1 at 2019-10-12 15:57:31 -0400
+Processing by LandscapersController#index as HTML
+  Parameters: {"authenticity_token"=>"lh56LYQMDHAw3q5Zt8v/1NBuLPnR9iTrLPYyhit3fhTjgF3Aa/BZbhr68QZa27bfzZVE/RE5PfLL6P+AaDyWBw==", "commit"=>"Sort A-Z"}
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/landscapers/index.html.erb:18
+  [1m[36mLandscaper Load (1.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" ORDER BY "landscapers"."business_name" ASC[0m
+  ↳ app/views/landscapers/index.html.erb:23
+  [1m[36mService Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 4], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 2], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 2]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 1], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.9ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 3], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 3]]
+  ↳ app/views/landscapers/index.html.erb:34
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 9609)
+Completed 200 OK in 59ms (Views: 49.3ms | ActiveRecord: 6.4ms | Allocations: 32987)
+
+
+Started POST "/landscapers/sort" for ::1 at 2019-10-12 15:57:34 -0400
+Processing by LandscapersController#index as HTML
+  Parameters: {"authenticity_token"=>"oBNyGi+sE8y5Q2aDRU+L1xrxeqBlcQF4nGayuiu7pf/VjVX3wFBG0pNnOdyoX8LcBwoSpKW+GGF7eH+8aPBN7A==", "commit"=>"Sort Z-A"}
+  [1m[36mLandscaper Load (1.3ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/landscapers/index.html.erb:18
+  [1m[36mLandscaper Load (1.1ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" ORDER BY "landscapers"."business_name" DESC[0m
+  ↳ app/views/landscapers/index.html.erb:23
+  [1m[36mService Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 3], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 3]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 1], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 2], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (16.9ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 2]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 4], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (44.0ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/landscapers/index.html.erb:34
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 94.0ms | Allocations: 9612)
+Completed 200 OK in 156ms (Views: 78.9ms | ActiveRecord: 70.8ms | Allocations: 32977)
+
+
+Started POST "/landscapers/service" for ::1 at 2019-10-12 15:57:36 -0400
+Processing by LandscapersController#index as HTML
+  Parameters: {"authenticity_token"=>"u2VtQSj9B9VQG9MKYs0YpP9BI+bBDANUO1tUzJEBnjvO+0qsxwFSy3o/jFWP3VGv4rpL4gHDGk3cRZnK0kp2KA==", "landscaper"=>{"service_ids"=>"1"}, "commit"=>"Filter"}
+  [1m[36mLandscaper Load (0.8ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/landscapers_controller.rb:6:in `index'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/landscapers/index.html.erb:18
+  [1m[36mLandscaper Load (0.7ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" INNER JOIN "landscaper_services" ON "landscapers"."id" = "landscaper_services"."landscaper_id" WHERE "landscaper_services"."service_id" = $1[0m  [["service_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:23
+  [1m[36mService Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 1], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 4], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/landscapers/index.html.erb:34
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 6105)
+Completed 200 OK in 67ms (Views: 39.0ms | ActiveRecord: 4.8ms | Allocations: 30004)
+
+
+Started POST "/landscapers/sort" for ::1 at 2019-10-12 15:57:38 -0400
+Processing by LandscapersController#index as HTML
+  Parameters: {"authenticity_token"=>"31BtNrWwVxAKdyvXgXB3NItmoA6cvuK+MYqXP2BUeSmqzkrbWkwCDiBTdIhsYD4/lp3IClxx+6fWlFo5Ix+ROg==", "commit"=>"Sort A-Z"}
+  [1m[36mLandscaper Load (2.0ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" WHERE "landscapers"."id" = $1 ORDER BY "landscapers"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `landscaper_or_user_signed_in?'
+  Rendering landscapers/index.html.erb within layouts/application
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services"[0m
+  ↳ app/views/landscapers/index.html.erb:18
+  [1m[36mLandscaper Load (0.5ms)[0m  [1m[34mSELECT "landscapers".* FROM "landscapers" ORDER BY "landscapers"."business_name" ASC[0m
+  ↳ app/views/landscapers/index.html.erb:23
+  [1m[36mService Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 4], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.7ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 4]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 2], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 2]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 1], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 1]]
+  ↳ app/views/landscapers/index.html.erb:34
+  [1m[36mService Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1 LIMIT $2[0m  [["landscaper_id", 3], ["LIMIT", 1]]
+  ↳ app/views/landscapers/index.html.erb:33
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" INNER JOIN "landscaper_services" ON "services"."id" = "landscaper_services"."service_id" WHERE "landscaper_services"."landscaper_id" = $1[0m  [["landscaper_id", 3]]
+  ↳ app/views/landscapers/index.html.erb:34
+  Rendered landscapers/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 9607)
+Completed 200 OK in 60ms (Views: 46.8ms | ActiveRecord: 7.9ms | Allocations: 32970)
+
+
