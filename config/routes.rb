@@ -12,6 +12,7 @@ Rails.application.routes.draw do
      resources :appointments, only: [:new, :create, :index, :show, :destroy]
   end
 
+  get 'landscapers/popular' => "landscapers#popular"
   get 'landscapers/service' => "landscapers#index"
   post 'landscapers/service' => "landscapers#index"
   get 'landscapers/sort' => "landscapers#index"

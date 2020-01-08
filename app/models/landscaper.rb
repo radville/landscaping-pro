@@ -14,6 +14,7 @@ class Landscaper < ApplicationRecord
 
   scope :alphabetical, -> { order(:business_name)}
   scope :reverse_alphabetical, -> { order(business_name: :desc)}
+  scope :popular, -> { joins(:appointments).group('id').order('COUNT(*) DESC').limit(2) }
 
   def services_attributes=(services_attributes)
     services_attributes.values.each do |service_attribute|

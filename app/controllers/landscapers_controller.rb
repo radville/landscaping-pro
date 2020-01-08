@@ -12,4 +12,8 @@ class LandscapersController < ApplicationController
             @landscapers = Landscaper.all
         end
     end
+
+    def popular
+        @popular = Landscaper.popular[0]
+    end
 end
