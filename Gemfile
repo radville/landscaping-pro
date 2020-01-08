@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 gem 'pry'
+gem 'bundler'
 # To log in with Omniauth
 gem 'omniauth'
 gem 'omniauth-facebook'
