@@ -272,6 +272,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap-sass
   bootstrap-social-rails
+  bundler (= 2.0.2)
   byebug
   capybara (>= 2.15)
   devise
@@ -302,4 +303,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.1.4
+   2.0.2
