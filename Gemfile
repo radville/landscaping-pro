@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.6.3'
 gem 'pry'
 # gem 'bundler', "=2.0.2"
 # To log in with Omniauth
