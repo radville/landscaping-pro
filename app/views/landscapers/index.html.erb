@@ -35,7 +35,7 @@
                     <li><%= service.description %></p></li>
                 <% end %>
                 </ul>
-            <%= mail_to(landscaper.email, "Request an Appointment", subject: "Landscaper Pro Appointment Request", body: "Dear #{landscaper.business_name}, \n\nLandscaper Pro recommended you for my lawn care needs. \n\nYou can log in at Landscaper Pro (#{root_url}) to create an appointment with me.") %>
+            <%= mail_to(landscaper.email, "Request an Appointment", subject: "Landscaper Pro Appointment Request", body: "Dear #{landscaper.business_name}, \n\nLandscaper Pro recommended you for my lawn care needs. \n\nYou can log in at Landscaper Pro (https://landscaping-pro.herokuapp.com/) and select 'Create Appointment' to create an appointment with me.") %>
         </div>
     <% end %>
 </div>
