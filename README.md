@@ -1,10 +1,20 @@
 # README
 
-The Landscaping Pro web app allows users to view upcoming appointments with landscapers, as well as find landscapers near them. Landscapers can also make account where they can manage/create appointments with these users. 
+The Landscaping-Pro web app allows users to view upcoming appointments with landscapers, as well as find landscapers near them. Landscapers can also make account where they can manage and create appointments with these users. 
 
 Created in Ruby 2.6.1. 
 
+### How to use
+
+Visit the live site at https://landscaping-pro.herokuapp.com/. 
+
+To join as a landscaper who can create appointments with clients, click "Join as a pro". You'll be promted to enter your information, which will show up on the "View Lawn Specialists" page. Click "Edit Profile" to change any of your information. To create appointments with clients, click "Create Appointment" and select the user and appointment details.
+
+To join as a client, click "Sign up". You can either create a new account, or log in with your Google credentials. Click "Find Lawn Specialist" to search for landscapers by service. You can click "request an appointment" to generate an email to that landscaper. You can also edit and view your profile details with "View Profile" and "Edit Profile".
+
 ### Installing
+
+To get a development environment running:
 
 1. Clone this repo to your local machine with `https://github.com/radville/landscaping-pro` 
 
